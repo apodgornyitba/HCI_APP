@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">SMART HOUSE</string>
     <string name="welcome">¡Bienvenido!</string>
+    <string name="come_in_to_your_home">Ingresa a tu hogar</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Mi hogar</string>
+    <string name="title_dashboard">Rutinas</string>
+    <string name="title_devices">Dispositivos</string>
+    <string name="title_notifications">Notificaciones</string>
 </resources>

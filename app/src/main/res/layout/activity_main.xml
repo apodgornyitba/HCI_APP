@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="61dp"
         android:layout_marginBottom="225dp"
-        android:text="Come in to your home"
+        android:text="@string/come_in_to_your_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

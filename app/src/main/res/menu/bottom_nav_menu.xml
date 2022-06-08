@@ -8,8 +8,13 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/spinclock_bw"
         android:title="@string/title_dashboard" />
+
+    <!--<item
+        android:id="@+id/navigation_devices"
+        android:icon="@drawable/list_bw"
+        android:title="@string/title_devices" />-->
 
     <item
         android:id="@+id/navigation_notifications"
