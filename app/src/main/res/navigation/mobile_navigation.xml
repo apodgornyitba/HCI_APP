@@ -23,4 +23,10 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
+    <fragment
+        android:id="@+id/navigation_devices"
+        android:name="ar.edu.itba.hci_app.ui.devices.DevicesFragment"
+        android:label="@string/title_devices"
+        tools:layout="@layout/fragment_devices" />
+
 </navigation>
