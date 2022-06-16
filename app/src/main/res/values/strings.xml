@@ -4,7 +4,7 @@
     <string name="come_in_to_your_home">Come in to your home</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">My Home</string>
-    <string name="title_dashboard">Rutines</string>
+    <string name="title_dashboard">Routines</string>
     <string name="title_devices">Devices</string>
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -21,5 +21,12 @@
     <string name="routine_name">Routine %1$d</string>
 
     <string name="device_type">Lamp %1$d</string>
+
+    <string name="channel_name">Notifications</string>
+    <string name="channel_description">Notifications Description</string>
+    <string name="notification_title">Notification Title</string>
+    <string name="notification_text">HELLO THERE, WELCOME TO SMARTHOUSE</string>
+
+
 
 </resources>

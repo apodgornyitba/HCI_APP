@@ -22,6 +22,7 @@
         android:layout_marginStart="95dp"
         android:layout_marginTop="20dp"
         android:text="@string/routines"
+        android:textColor="@color/txt_base"
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

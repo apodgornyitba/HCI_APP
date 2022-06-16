@@ -24,5 +24,12 @@
 
     <string name="device_type">Lámpara %1$d</string>
 
+    <string name="channel_name">Notificación</string>
+    <string name="channel_description">Descripción de la Notifición</string>
+    <string name="notification_title">Titulo de la Notificación</string>
+    <string name="notification_text">Bienvenido a SMARTHOUSE, mucho gusto!</string>
+
+
+
 
 </resources>

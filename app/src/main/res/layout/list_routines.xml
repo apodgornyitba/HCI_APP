@@ -12,6 +12,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/secondary_light"
         android:text="@string/routine_name"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
