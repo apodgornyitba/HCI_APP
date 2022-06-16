@@ -11,6 +11,10 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="menu_1">Ajustes</string>
+    <string name="menu_2">Ayuda</string>
+    <string name="menu_3">Sobre Nosotros</string>
+
     <string name="home_name">Mi Hogar</string>
     <string name="routines">Mis Rutinas</string>
 
