@@ -4,24 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_routines"
-        android:layout_width="325dp"
-        android:layout_height="670dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
+        android:id="@+id/recycler_view_home"
+        android:layout_width="635dp"
+        android:layout_height="278dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/routines_text"
+        android:id="@+id/home_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/routines"
+        android:layout_marginStart="280dp"
+        android:text="@string/home_name"
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

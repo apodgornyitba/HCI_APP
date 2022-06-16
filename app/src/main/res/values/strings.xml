@@ -11,8 +11,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="home_name">My Home</string>
+    <string name="routines">My Routines</string>
 
     <string name="room_type">Bedroom %1$d</string>
+    <string name="routine_name">Routine %1$d</string>
 
     <string name="device_type">Lamp %1$d</string>
 

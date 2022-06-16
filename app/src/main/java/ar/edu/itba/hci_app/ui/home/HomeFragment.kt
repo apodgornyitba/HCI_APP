@@ -41,8 +41,8 @@ class HomeFragment : Fragment() {
 //        binding.recyclerViewRoom.layoutManager = LinearLayoutManager(this.context)
 //        binding.recyclerViewRoom.layoutManager = GridLayoutManager(this.context, 3
 //            , RecyclerView.HORIZONTAL, false);
-        binding.recyclerViewRoom.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-        binding.recyclerViewRoom.adapter = adapter
+        binding.recyclerViewHome.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+        binding.recyclerViewHome.adapter = adapter
 
 //        binding.fab.setOnClickListener {
 //            addItem(dataSet.size + 1)
