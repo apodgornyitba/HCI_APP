@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
     RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
@@ -15,7 +16,7 @@ class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.button.text = dataSet[position]
+        holder.buttonRoom.text = dataSet[position]
     }
 
     override fun getItemCount(): Int {
@@ -23,10 +24,10 @@ class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val button: Button
+        val buttonRoom: Button
 
         init {
-            button = itemView.findViewById(R.id.button_room)
+            buttonRoom = itemView.findViewById(R.id.button_room)
         }
     }
 

@@ -11,10 +11,11 @@
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/fragment_devices.xml" value="0.24895833333333334" />
-        <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/fragment_home.xml" value="0.23148148148148148" />
+        <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/list_devices.xml" value="0.22037037037037038" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/list_item.xml" value="0.21481481481481482" />
+        <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/list_room.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/menu/appbar_menu.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>
