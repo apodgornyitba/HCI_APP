@@ -1,9 +1,7 @@
 package ar.edu.itba.hci_app
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.itba.hci_app.databinding.ActivityMainBinding
 
