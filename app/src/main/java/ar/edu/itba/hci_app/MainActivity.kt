@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             startActivity()
             createNotificationChannel()
             showNotification()
-        }
+        }   
     }
 
     private fun createNotificationChannel() {

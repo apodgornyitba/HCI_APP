@@ -1,15 +1,16 @@
 package ar.edu.itba.hci_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.widget.Button
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import ar.edu.itba.hci_app.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
 
@@ -37,6 +38,17 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(ar.edu.itba.hci_app.R.menu.appbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item1->{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            else-> return super.onOptionsItemSelected(item)
+        }
         return true
     }
 }
