@@ -1,0 +1,24 @@
+Los botones quedan cortados
+tamaño del icono y mandar el texto abajo (RECOMIENDA CARD VIEW) (JUGAR CON LOS PADDINGS)
+
+Traer la info de la api y crear los botones dinamicamente
+
+
+
+Como pasar distintos fragments
+
+Mostrar las notificaciones en el toolbar
+(INAPPNOTIFICATION, TOAST Y SHOW O SNACKBAR.MAKE)
+(SI ESTAS DENTRO MOSTRAS INAPPNOTIFICATION SINO NOTIFICATION COMUNES)
+Como crear una notificacion para cada accion que queramos mostrar de los dispositivos
+
+Se puede utilizar directamente el canal de notificaciones que ya tengo o tengo que crear uno nuevo para cada activity que quiera mandar una notificacion
+
+(MOVER LAS NOTIFICACIONES CON UN ALARMMANAGER O WORKMANAGER(un poco mejor))
+
+Fijamos el color de los textos a negro, necesitamos colocarlos en blanco cuando hacemos un cambio a dark theme
+(UTILIZAR LOS ITEMS DE THEME CON EL ?ITEM=NAME)
+
+Como traer todos los iconos con sus distintos tamaños
+
+Solo implementar la lista de dispositivos en vez de lista de habitaciones
