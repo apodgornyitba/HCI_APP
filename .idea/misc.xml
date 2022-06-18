@@ -22,6 +22,15 @@
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/layout/list_routines.xml" value="0.24895833333333334" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/menu/appbar_menu.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/hci_app/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.16313932980599646" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.19168173598553345" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_devices.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/list_devices.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/list_room.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/list_routines.xml" value="0.19270833333333334" />
       </map>
     </option>
   </component>
