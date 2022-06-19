@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="HeaderText" parent="TextAppearance.AppCompat">
+
+    <style name="ScreenTitle" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:layout_marginTop">20dp</item>
+
+        <item name="android:textSize">38sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:textColorPrimary</item>
+
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!-- Device view -->
+    <style name="DeviceNameText" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:layout_marginTop">64dp</item>
+
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DeviceTextBody" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DeviceTextSubtitle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:textColorHint</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DeviceImage" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+
+        <item name="android:layout_marginTop">15dp</item>
+
+        <item name="android:background">@color/transparent</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="DeviceButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">130dp</item>
+
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">25dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+
+        <item name="android:backgroundTint">?colorDeviceButton</item>
+        <item name="android:drawableTop">@drawable/bed_big_bw</item>
+
+        <item name="android:ellipsize">end</item>
+
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+
+        <item name="android:singleLine">false</item>
+        <item name="android:textColor">?textColorDeviceButton</item>
     </style>
 </resources>

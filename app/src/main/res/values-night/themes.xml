@@ -24,8 +24,13 @@
         <item name="android:textColorPrimaryDisableOnly">@color/grey_500</item>
         <item name="android:textColorPrimaryInverse">@color/black</item>
 
+        <item name="android:textColorHint">@color/grey_300</item>
+
         <item name="textColorPrimaryButton">@color/black_400</item>
         <item name="textColorSecondaryButton">@color/white_500</item>
         <item name="textColorDeviceButton">@color/black_400</item>
+
+        <!-- Images -->
+        <item name="android:tint">@color/white</item>
     </style>
 </resources>

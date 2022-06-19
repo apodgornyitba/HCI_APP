@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="colorDeviceButton" format="color"/>
+    <attr name="colorDeviceButton" format="color" />
 
-    <attr name="textColorPrimaryButton" format="reference|color"/>
-    <attr name="textColorSecondaryButton" format="reference|color"/>
-    <attr name="textColorDeviceButton" format="reference|color"/>
+    <attr name="textColorPrimaryButton" format="reference|color" />
+    <attr name="textColorSecondaryButton" format="reference|color" />
+    <attr name="textColorDeviceButton" format="reference|color" />
 </resources>
