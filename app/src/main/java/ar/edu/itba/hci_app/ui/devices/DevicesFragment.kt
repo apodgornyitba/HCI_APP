@@ -41,9 +41,9 @@ class DevicesFragment : Fragment() {
 
         adapter = DeviceAdapter(dataSet)
 //        binding.recyclerViewDevice.layoutManager = LinearLayoutManager(this.context)
-        binding.fragmentDevicesRecyclerView.layoutManager =
+        binding.fragmentDevicesRecyclerView?.layoutManager =
             StaggeredGridLayoutManager(2, RecyclerView.VERTICAL);
-        binding.fragmentDevicesRecyclerView.adapter = adapter
+        binding.fragmentDevicesRecyclerView?.adapter = adapter
 
         return root
     }
