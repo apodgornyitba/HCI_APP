@@ -90,6 +90,7 @@
                     android:valueFrom="0"
                     android:valueTo="100"
                     app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
                     app:tickVisible="false" />
 
                 <TextView
@@ -144,7 +145,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageButton
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="64dp"
 
@@ -153,9 +154,15 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="10dp"
 
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_skip_previous_48"
+                    app:iconGravity="top"
+                    app:iconSize="48dp"
 
-                <ImageButton
+                    app:iconTint="?android:textColorPrimary" />
+
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="64dp"
 
@@ -164,20 +171,32 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
 
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_stop_48"
+                    app:iconGravity="top"
+                    app:iconSize="48dp"
 
-                <ImageButton
+                    app:iconTint="?android:textColorPrimary" />
+
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="64dp"
 
                     android:layout_gravity="center"
-
                     android:layout_marginStart="10dp"
+
                     android:layout_marginEnd="10dp"
 
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_baseline_pause_48"
+                    app:iconGravity="top"
+                    app:iconSize="48dp"
 
-                <ImageButton
+                    app:iconTint="?colorPrimaryVariant" />
+
+                <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="64dp"
 
@@ -186,7 +205,13 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="0dp"
 
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_skip_next_48"
+                    app:iconGravity="top"
+                    app:iconSize="48dp"
+
+                    app:iconTint="?android:textColorPrimary" />
             </LinearLayout>
 
             <TextView
@@ -261,9 +286,16 @@
             <ImageButton
                 android:layout_width="76dp"
                 android:layout_height="76dp"
-
                 android:layout_gravity="center"
-                android:gravity="center" />
+
+                android:background="@drawable/roundcorner"
+                android:gravity="center"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/playlist_bw"
+
+
+                app:tint="@color/black" />
 
             <TextView
                 android:id="@+id/device_speaker_playlist_hint"

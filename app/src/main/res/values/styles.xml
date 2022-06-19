@@ -15,6 +15,16 @@
     </style>
 
     <!-- Device view -->
+    <style name="DeviceSliderTooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="android:textAppearance">@style/TextAppearance.DeviceSliderTooltip</item>
+        <item name="backgroundTint">?colorSecondaryVariant</item>
+    </style>
+
+    <style name="TextAppearance.DeviceSliderTooltip" parent="TextAppearance.MaterialComponents.Tooltip">
+        <item name="android:textColor">?colorOnSecondary</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
     <style name="DeviceNameText" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
