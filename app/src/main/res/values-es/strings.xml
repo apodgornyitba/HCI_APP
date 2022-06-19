@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SMART HOUSE</string>
+    <string name="app_name">SMARTHOUSE</string>
     <string name="welcome">¡Bienvenido!</string>
     <string name="come_in_to_your_home">Ingresa a tu hogar</string>
     <string name="title_activity_home">HomeActivity</string>
@@ -12,8 +12,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="menu_1">Ajustes</string>
+
     <string name="menu_2">Ayuda</string>
+    <string name="help">Ayuda</string>
+    <string name="help1">Esta aplicación funciona en conjunto con el sitio web SMARTHOUSE. Muestra los dispositivos que pueden ser controlados y las rutinas que pueden ser accionanadas</string>
+
     <string name="menu_3">Sobre Nosotros</string>
+    <string name="aboutus">Sobre Nosotros</string>
+    <string name="aboutus1">Somos estudiantes del ITBA cursando la materia HCI</string>
+    <string name="aboutus2">Grupo 5:</string>
+    <string name="aboutus3">Martin Edgardo Zahnd</string>
+    <string name="aboutus4">Andrés Podgorny</string>
+    <string name="aboutus5">Sol Victoria Anselmo</string>
 
     <string name="home_name">Mi Hogar</string>
     <string name="routines">Mis Rutinas</string>
