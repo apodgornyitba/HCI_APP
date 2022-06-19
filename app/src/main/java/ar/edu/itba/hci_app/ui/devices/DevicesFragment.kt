@@ -1,4 +1,5 @@
 package ar.edu.itba.hci_app.ui.devices
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import ar.edu.itba.hci_app.DeviceAdapter
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.RoomAdapter
@@ -35,13 +37,14 @@ class DevicesFragment : Fragment() {
         _binding = FragmentDevicesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        for(i in 1..12) addItem(i)
+        for (i in 1..10) addItem(i)
 
         adapter = DeviceAdapter(dataSet)
 //        binding.recyclerViewDevice.layoutManager = LinearLayoutManager(this.context)
-        binding.recyclerViewDevice.layoutManager = GridLayoutManager(this.context, 3
-            , RecyclerView.HORIZONTAL, false);
-        binding.recyclerViewDevice.adapter = adapter
+        binding.fragmentDevicesRecyclerView.layoutManager =
+            StaggeredGridLayoutManager(2, RecyclerView.VERTICAL);
+        binding.fragmentDevicesRecyclerView.adapter = adapter
+
         return root
     }
 
@@ -50,9 +53,7 @@ class DevicesFragment : Fragment() {
         _binding = null
     }
 
-    private fun addItem(index: Int){
-        val itemText = resources.getString(R.string.device_type, index)
-        dataSet.add(itemText)
-
+    private fun addItem(index: Int) {
+        dataSet.add(resources.getString(R.string.device_type, index))
     }
 }

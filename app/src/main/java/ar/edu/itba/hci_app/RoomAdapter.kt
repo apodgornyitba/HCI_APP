@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
     RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
@@ -23,7 +22,7 @@ class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
         return dataSet.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val buttonRoom: Button
 
         init {
@@ -35,4 +34,4 @@ class RoomAdapter constructor(private val dataSet: ArrayList<String>) :
         private const val TAG = "RoomAdapter"
     }
 
-    }
+}

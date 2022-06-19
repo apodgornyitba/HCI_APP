@@ -1,10 +1,10 @@
 package ar.edu.itba.hci_app
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class DeviceAdapter constructor(private val dataSet: ArrayList<String>) :
@@ -12,22 +12,30 @@ class DeviceAdapter constructor(private val dataSet: ArrayList<String>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_devices, parent, false)
+
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = dataSet[position]
+        holder.buttonDevice.text = dataSet[position]
+
+        holder.buttonDevice.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DeviceSpeaker::class.java)
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
         return dataSet.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val textView: TextView
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val buttonDevice: Button
 
         init {
-            textView = itemView.findViewById(R.id.list_devices)
+            buttonDevice = itemView.findViewById(R.id.button_device)
         }
     }
 

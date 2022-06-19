@@ -14,7 +14,7 @@
     <string name="menu_2">Help</string>
     <string name="help">Help</string>
     <string name="help1">This application works with the web page SMARTHOUSE. It shows the devices that can be controled and the rutines that can be activated</string>
-    
+
     <string name="menu_3">About Us</string>
     <string name="aboutus">About Us</string>
     <string name="aboutus1">We are students from ITBA studying the subject HCI</string>
@@ -52,5 +52,9 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <!-- Devices -->
+    <string name="Screen_Devices">My Devices</string>
 
 </resources>

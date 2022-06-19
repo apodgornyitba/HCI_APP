@@ -39,7 +39,7 @@
     <string name="notification_title">Titulo de la Notificación</string>
     <string name="notification_text">Bienvenido a SMARTHOUSE, mucho gusto!</string>
 
-
-
+    <!-- Devices -->
+    <string name="Screen_Devices">Mis dispositivos</string>
 
 </resources>
