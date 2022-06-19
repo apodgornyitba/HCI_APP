@@ -25,6 +25,8 @@
 
     <string name="home_name">My Home</string>
     <string name="routines">My Routines</string>
+    <string name="devices">My Devices</string>
+    <string name="notifications">My Notifications</string>
 
     <string name="room_type">Bedroom %1$d</string>
     <string name="routine_name">Routine %1$d</string>
@@ -35,23 +37,6 @@
     <string name="channel_description">Notifications Description</string>
     <string name="notification_title">Notification Title</string>
     <string name="notification_text">HELLO THERE, WELCOME TO SMARTHOUSE</string>
-    <!-- Settings Activity Title -->
-    <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 
     <!-- Devices -->
