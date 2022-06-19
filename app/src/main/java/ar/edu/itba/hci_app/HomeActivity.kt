@@ -47,6 +47,14 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+            R.id.item2->{
+                val intent = Intent(this, HelpActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.item3->{
+                val intent = Intent(this, AboutUsActivity::class.java)
+                startActivity(intent)
+            }
             else-> return super.onOptionsItemSelected(item)
         }
         return true

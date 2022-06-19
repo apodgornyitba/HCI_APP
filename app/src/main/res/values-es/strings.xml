@@ -27,6 +27,8 @@
 
     <string name="home_name">Mi Hogar</string>
     <string name="routines">Mis Rutinas</string>
+    <string name="devices">Mis Dispositivos</string>
+    <string name="notifications">Mis Notificaciones</string>
 
     <string name="room_type">Dormitorio %1$d</string>
     <string name="routine_name">Rutina %1$d</string>
