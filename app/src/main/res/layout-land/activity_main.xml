@@ -23,7 +23,8 @@
         android:layout_height="86dp"
         android:layout_marginStart="420dp"
         android:layout_marginTop="170dp"
-        android:backgroundTint="@color/primary_night"
+        android:backgroundTint="?colorSecondary"
+        android:textColor="?textColorSecondaryButton"
         android:text="@string/come_in_to_your_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

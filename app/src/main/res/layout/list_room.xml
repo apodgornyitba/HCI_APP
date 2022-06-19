@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
 
-        android:backgroundTint="@color/quaternary_light"
+        android:backgroundTint="?colorDeviceButton"
         android:drawableTop="@drawable/bed_big_bw"
 
         android:ellipsize="end"
@@ -24,10 +24,10 @@
         android:paddingBottom="5dp"
 
         android:singleLine="false"
-        android:textColor="@color/txt_base"
+        android:textColor="?textColorDeviceButton"
 
         app:cornerRadius="15dp"
-        app:iconTint="@color/txt_base"
+        app:iconTint="?android:textColorPrimary"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

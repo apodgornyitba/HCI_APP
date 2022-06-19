@@ -1,16 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Hci_app" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color.-->
-        <item name="colorPrimary">@color/primary_light</item>
-        <item name="colorPrimaryVariant">@color/primary_night</item>
-        <item name="colorOnPrimary">@color/txt_light1</item>
-        <!--        Secondary brand color.-->
-        <item name="colorSecondary">@color/secondary_light</item>
-        <item name="colorSecondaryVariant">@color/secondary_night</item>
-        <item name="colorOnSecondary">@color/txt_base</item>
-        <!--        Status bar color.-->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lightblue_600</item>
+        <item name="colorPrimaryVariant">@color/lightblue_500</item>
+        <item name="colorOnPrimary">@color/black_400</item>
+
+        <item name="colorDeviceButton">@color/lightblue_100</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_600</item>
+        <item name="colorSecondaryVariant">@color/blue_500</item>
+        <item name="colorOnSecondary">@color/white_600</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Screen background -->
+        <item name="android:windowBackground">@color/white</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/grey_300</item>
+        <item name="android:textColorPrimaryInverse">@color/white_600</item>
+
+        <item name="textColorPrimaryButton">@color/black_400</item>
+        <item name="textColorSecondaryButton">@color/white_500</item>
+        <item name="textColorDeviceButton">@color/black_400</item>
     </style>
 </resources>

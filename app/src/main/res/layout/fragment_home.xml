@@ -28,9 +28,9 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
         android:text="@string/home_name"
-        android:textColor="@color/txt_base"
         android:textSize="38sp"
         android:textStyle="bold"
+        android:textColor="?android:textColorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
