@@ -23,8 +23,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
 
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_persiana_title"
-        app:tint="?android:tint" />
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_title" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_persiana_switch"

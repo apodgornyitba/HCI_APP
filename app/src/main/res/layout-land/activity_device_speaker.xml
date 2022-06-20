@@ -27,8 +27,7 @@
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_speaker_title"
-        app:tint="?android:tint" />
+        app:layout_constraintTop_toBottomOf="@id/device_speaker_title" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_speaker_switch"

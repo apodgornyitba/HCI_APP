@@ -23,8 +23,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
 
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_title"
-        app:tint="?android:tint" />
+        app:layout_constraintTop_toBottomOf="@id/device_oven_title" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_oven_switch"
@@ -215,31 +214,31 @@
 
                 android:orientation="vertical">
 
-            <ImageButton
-                android:layout_width="76dp"
-                android:layout_height="76dp"
-                android:layout_gravity="center"
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
 
-                android:background="@drawable/roundcorner"
-                android:gravity="center"
-                android:padding="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/oven_mode_up_bw"
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/oven_mode_up_bw"
 
-                app:tint="@color/black" />
+                    app:tint="@color/black" />
 
-            <TextView
-                android:id="@+id/device_oven_types_hint3"
+                <TextView
+                    android:id="@+id/device_oven_types_hint3"
 
-                style="@style/DeviceTextSubtitle"
+                    style="@style/DeviceTextSubtitle"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:layout_gravity="center"
+                    android:layout_gravity="center"
 
-                android:text="Arriba"
-                android:textAlignment="center" />
+                    android:text="Arriba"
+                    android:textAlignment="center" />
             </LinearLayout>
 
         </LinearLayout>
