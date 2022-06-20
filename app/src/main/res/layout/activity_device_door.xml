@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceDoor">
+
+    <TextView
+        android:id="@+id/device_door_title"
+        style="@style/DeviceNameText"
+        android:text="Puerta"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/device_door_image"
+        style="@style/DeviceImage"
+
+        android:src="@drawable/door_bw"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_door_title"
+        app:tint="?android:tint" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/device_door_switch"
+
+        style="@style/DeviceTextBody"
+
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+
+        android:text="Cerrado"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_door_image" />
+
+    <LinearLayout
+        android:id="@+id/device_door_actions_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+
+
+        android:layout_weight="10"
+
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_door_switch">
+
+        <LinearLayout
+            android:id="@+id/device_door_layout1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/device_door_layout2"
+
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lock_open_bw"
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_door_hint1"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Desbloquear"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_door_layout3"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+
+                android:background="@drawable/roundcorner"
+                android:gravity="center"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lock_closed_bw"
+
+
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/device_door_hint2"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+
+                android:text="Bloquear"
+                android:textAlignment="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    >
+
+</androidx.constraintlayout.widget.ConstraintLayout>

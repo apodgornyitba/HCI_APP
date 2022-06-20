@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersianaActivity">
+
+    <TextView
+        android:id="@+id/device_persiana_title"
+        style="@style/DeviceNameText"
+        android:text="Persiana"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/device_persiana_image"
+        style="@style/DeviceImage"
+
+        android:src="@drawable/curtain_bw"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_title"
+        app:tint="?android:tint" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/device_persiana_switch"
+
+        style="@style/DeviceTextBody"
+
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+
+        android:text="Cerrado"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_image" />
+
+    <LinearLayout
+        android:id="@+id/device_persiana_actions_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+
+
+        android:layout_weight="10"
+
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_switch">
+
+        <LinearLayout
+            android:id="@+id/device_persiana_position_layout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/device_persiana_slider_position"
+
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+
+                    android:stepSize="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
+                    app:tickVisible="false" />
+
+                <TextView
+                    android:id="@+id/device_persiana_slider_position_indicator"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="0"
+                    android:gravity="center"
+
+                    android:text="27%" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_persiana_slider_position_hint"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+
+                android:text="Posición"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    >
+
+</androidx.constraintlayout.widget.ConstraintLayout>
