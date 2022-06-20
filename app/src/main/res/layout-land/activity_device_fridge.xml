@@ -4,50 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceOven">
+    tools:context=".DeviceFridge">
 
     <TextView
-        android:id="@+id/device_oven_title"
+        android:id="@+id/device_fridge_title"
         style="@style/DeviceNameText"
-        android:text="Horno"
+        android:layout_marginTop="64dp"
 
+        android:text="Heladera"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/device_oven_image"
+        android:id="@+id/device_fridge_image"
         style="@style/DeviceImage"
 
-        android:src="@drawable/oven_bw"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/refrigerator_bw"
 
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_title"
+        app:layout_constraintTop_toBottomOf="@id/device_fridge_title"
         app:tint="?android:tint" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/device_oven_switch"
+        android:id="@+id/device_fridge_switch"
 
         style="@style/DeviceTextBody"
 
         android:layout_width="wrap_content"
         android:layout_height="52dp"
 
-        android:text="Encendido"
+        android:layout_marginTop="44dp"
 
+        android:text="Encendido"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_image" />
+        app:layout_constraintTop_toBottomOf="@id/device_fridge_image" />
 
     <LinearLayout
-        android:id="@+id/device_oven_actions_layout"
+        android:id="@+id/device_fridge_actions_layout"
 
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="333dp"
+        android:layout_height="325dp"
 
         android:layout_marginStart="35dp"
-        android:layout_marginTop="35dp"
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="35dp"
 
@@ -58,11 +63,11 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_switch">
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/device_oven_temp_layout1"
+            android:id="@+id/device_fridge_temp_layout1"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +81,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.slider.Slider
-                    android:id="@+id/device_oven_slider_temp"
+                    android:id="@+id/device_fridge_slider_temp1"
 
                     android:layout_width="0dp"
                     android:layout_height="32dp"
@@ -94,7 +99,7 @@
                     app:tickVisible="false" />
 
                 <TextView
-                    android:id="@+id/device_fridge_slider_temp_indicator"
+                    android:id="@+id/device_fridge_slider_temp_indicator1"
 
                     style="@style/DeviceTextBody"
 
@@ -111,7 +116,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/device_fridge_slider_temp_hint"
+                android:id="@+id/device_fridge_slider_temp_hint1"
 
                 style="@style/DeviceTextSubtitle"
 
@@ -127,109 +132,59 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4" />
+            android:layout_weight="2" />
 
         <LinearLayout
-            android:id="@+id/device_oven_types_layout"
+            android:id="@+id/device_fridge_temp_layout2"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/device_oven_types_layout1"
-
-                android:layout_width="108dp"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="76dp"
-                    android:layout_height="76dp"
-                    android:layout_gravity="center"
-
-                    android:background="@drawable/roundcorner"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/oven_mode_down_bw"
-
-                    app:tint="@color/black" />
-
-                <TextView
-                    android:id="@+id/device_oven_types_hint1"
-
-                    style="@style/DeviceTextSubtitle"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_gravity="center"
-
-                    android:text="Abajo"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/device_oven_types_layout2"
-
-                android:layout_width="127dp"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="76dp"
-                    android:layout_height="76dp"
-                    android:layout_gravity="center"
-
-                    android:background="@drawable/roundcorner"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/oven_mode_common_bw"
-
-                    app:tint="@color/black" />
-
-                <TextView
-                    android:id="@+id/device_oven_types_hint2"
-
-                    style="@style/DeviceTextSubtitle"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_gravity="center"
-
-                    android:text="Convencional"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/device_oven_types_layout3"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:layout_width="76dp"
-                android:layout_height="76dp"
-                android:layout_gravity="center"
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/device_fridge_slider_temp2"
 
-                android:background="@drawable/roundcorner"
-                android:gravity="center"
-                android:padding="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/oven_mode_up_bw"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
 
-                app:tint="@color/black" />
+                    android:layout_gravity="center"
+
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+
+                    android:stepSize="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
+                    app:tickVisible="false" />
+
+                <TextView
+                    android:id="@+id/device_fridge_slider_temp_indicator2"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="0"
+                    android:gravity="center"
+
+                    android:text="27%" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/device_oven_types_hint3"
+                android:id="@+id/device_fridge_slider_temp_hint2"
 
                 style="@style/DeviceTextSubtitle"
 
@@ -238,19 +193,17 @@
 
                 android:layout_gravity="center"
 
-                android:text="Arriba"
+                android:text="Temperatura Freezer (C)"
                 android:textAlignment="center" />
-            </LinearLayout>
-
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4" />
+            android:layout_weight="2" />
 
         <LinearLayout
-            android:id="@+id/device_oven_types2_layout"
+            android:id="@+id/device_fridge_types_layout1"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -258,9 +211,9 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/device_oven_types2_layout1"
+                android:id="@+id/device_fridge_types_layout2"
 
-                android:layout_width="176dp"
+                android:layout_width="106dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
@@ -274,12 +227,12 @@
                     android:gravity="center"
                     android:padding="15dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/grill_bw"
+                    android:src="@drawable/champagneglass_bw"
 
                     app:tint="@color/black" />
 
                 <TextView
-                    android:id="@+id/device_oven_types2_hint1"
+                    android:id="@+id/device_fridge_types_hint1"
 
                     style="@style/DeviceTextSubtitle"
 
@@ -288,14 +241,14 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Grill"
+                    android:text="Fiesta"
                     android:textAlignment="center" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/device_oven_types2_layout2"
+                android:id="@+id/device_fridge_types_layout4"
 
-                android:layout_width="171dp"
+                android:layout_width="117dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
@@ -309,12 +262,12 @@
                     android:gravity="center"
                     android:padding="15dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/convector_bw"
+                    android:src="@drawable/refrigerator_small_bw"
 
                     app:tint="@color/black" />
 
                 <TextView
-                    android:id="@+id/device_oven_types2_hint2"
+                    android:id="@+id/device_fridge_types_hint3"
 
                     style="@style/DeviceTextSubtitle"
 
@@ -323,12 +276,46 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Convector"
+                    android:text="Normal"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_fridge_types_layout3"
+
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/beach_bw"
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_fridge_types_hint2"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Vacaciones"
                     android:textAlignment="center" />
             </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 
 

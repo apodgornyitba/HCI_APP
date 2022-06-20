@@ -9,22 +9,13 @@
     <TextView
         android:id="@+id/device_oven_title"
         style="@style/DeviceNameText"
-        android:text="Horno"
+        android:layout_marginTop="68dp"
 
+        android:text="Horno"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/device_oven_image"
-        style="@style/DeviceImage"
-
-        android:src="@drawable/oven_bw"
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_title"
-        app:tint="?android:tint" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_oven_switch"
@@ -34,22 +25,35 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
 
-        android:text="Encendido"
+        android:layout_marginTop="4dp"
 
+        android:text="Encendido"
+        app:layout_constraintHorizontal_bias="0.074"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_oven_image" />
 
+    <ImageView
+        android:id="@+id/device_oven_image"
+        style="@style/DeviceImage"
+
+        android:layout_marginTop="16dp"
+        android:src="@drawable/oven_bw"
+
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_oven_title"
+        app:tint="?android:tint" />
+
     <LinearLayout
         android:id="@+id/device_oven_actions_layout"
 
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="497dp"
+        android:layout_height="319dp"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="52dp"
 
 
         android:layout_weight="10"
@@ -57,9 +61,7 @@
         android:orientation="vertical"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_oven_switch">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/device_oven_temp_layout1"
@@ -78,8 +80,8 @@
                 <com.google.android.material.slider.Slider
                     android:id="@+id/device_oven_slider_temp"
 
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_width="454dp"
+                    android:layout_height="36dp"
 
                     android:layout_gravity="center"
 
@@ -140,7 +142,7 @@
             <LinearLayout
                 android:id="@+id/device_oven_types_layout1"
 
-                android:layout_width="108dp"
+                android:layout_width="152dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
@@ -175,7 +177,7 @@
             <LinearLayout
                 android:id="@+id/device_oven_types_layout2"
 
-                android:layout_width="127dp"
+                android:layout_width="176dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
@@ -215,38 +217,38 @@
 
                 android:orientation="vertical">
 
-            <ImageButton
-                android:layout_width="76dp"
-                android:layout_height="76dp"
-                android:layout_gravity="center"
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
 
-                android:background="@drawable/roundcorner"
-                android:gravity="center"
-                android:padding="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/oven_mode_up_bw"
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/oven_mode_up_bw"
 
-                app:tint="@color/black" />
+                    app:tint="@color/black" />
 
-            <TextView
-                android:id="@+id/device_oven_types_hint3"
+                <TextView
+                    android:id="@+id/device_oven_types_hint3"
 
-                style="@style/DeviceTextSubtitle"
+                    style="@style/DeviceTextSubtitle"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:layout_gravity="center"
+                    android:layout_gravity="center"
 
-                android:text="Arriba"
-                android:textAlignment="center" />
+                    android:text="Arriba"
+                    android:textAlignment="center" />
             </LinearLayout>
 
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="10dp"
             android:layout_weight="4" />
 
         <LinearLayout
@@ -260,7 +262,7 @@
             <LinearLayout
                 android:id="@+id/device_oven_types2_layout1"
 
-                android:layout_width="176dp"
+                android:layout_width="257dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
