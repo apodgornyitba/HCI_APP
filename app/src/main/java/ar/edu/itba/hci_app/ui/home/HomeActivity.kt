@@ -62,6 +62,10 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        this.finish()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.appbar_menu, menu)
@@ -97,6 +101,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun popBackStack() {
+        Log.d(TAG, "popBackStack")
         supportFragmentManager.popBackStack()
     }
 
