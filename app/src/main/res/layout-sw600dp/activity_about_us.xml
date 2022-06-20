@@ -17,10 +17,10 @@
         android:id="@+id/aboutus_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="68dp"
         android:text="@string/aboutus"
         android:textColor="?android:textColorPrimary"
-        android:textSize="38sp"
+        android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,12 +28,12 @@
 
     <TextView
         android:id="@+id/aboutus1_text"
-        android:layout_width="344dp"
-        android:layout_height="74dp"
+        android:layout_width="614dp"
+        android:layout_height="125dp"
         android:layout_marginTop="164dp"
         android:text="@string/aboutus1"
         android:textColor="?android:textColorPrimary"
-        android:textSize="28sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,11 +42,11 @@
         android:id="@+id/aboutus2_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="296dp"
         android:text="@string/aboutus2"
-        android:textSize="28sp"
         android:textColor="?android:textColorPrimary"
+        android:textSize="50sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,23 +54,11 @@
         android:id="@+id/aboutus3_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="372dp"
         android:text="@string/aboutus3"
-        android:textSize="25sp"
         android:textColor="?android:textColorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/aboutus4_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="368dp"
-        android:text="@string/aboutus4"
-        android:textSize="25sp"
-        android:textColor="?android:textColorPrimary"
+        android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,11 +66,23 @@
         android:id="@+id/aboutus5_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="500dp"
         android:text="@string/aboutus5"
-        android:textSize="25sp"
         android:textColor="?android:textColorPrimary"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/aboutus4_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="436dp"
+        android:text="@string/aboutus4"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

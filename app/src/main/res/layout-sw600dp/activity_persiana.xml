@@ -9,13 +9,24 @@
     <TextView
         android:id="@+id/device_persiana_title"
         style="@style/DeviceNameText"
-        android:layout_marginTop="76dp"
-
         android:text="Persiana"
-        app:layout_constraintHorizontal_bias="0.093"
+        android:textSize="70sp"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/device_persiana_image"
+        style="@style/DeviceImage"
+
+        android:layout_width="170dp"
+        android:layout_height="148dp"
+
+        android:src="@drawable/curtain_bw"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_title" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_persiana_switch"
@@ -25,36 +36,25 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
 
-        android:layout_marginTop="4dp"
-
+        android:layout_marginTop="12dp"
         android:text="Cerrado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_persiana_image"
-        app:layout_constraintVertical_bias="0.214" />
-
-    <ImageView
-        android:id="@+id/device_persiana_image"
-        style="@style/DeviceImage"
-
-        android:layout_marginTop="16dp"
-        android:src="@drawable/curtain_bw"
-
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_persiana_title" />
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_image" />
 
     <LinearLayout
         android:id="@+id/device_persiana_actions_layout"
 
-        android:layout_width="481dp"
-        android:layout_height="78dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
 
         android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
 
 
         android:layout_weight="10"
@@ -63,15 +63,14 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/device_persiana_switch">
 
         <LinearLayout
             android:id="@+id/device_persiana_position_layout"
 
-            android:layout_width="479dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
             android:orientation="vertical">
 
@@ -84,7 +83,7 @@
                 <com.google.android.material.slider.Slider
                     android:id="@+id/device_persiana_slider_position"
 
-                    android:layout_width="693dp"
+                    android:layout_width="0dp"
                     android:layout_height="32dp"
 
                     android:layout_gravity="center"

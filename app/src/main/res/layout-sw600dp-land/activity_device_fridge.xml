@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceFridge">
+
+    <TextView
+        android:id="@+id/device_fridge_title"
+        style="@style/DeviceNameText"
+        android:layout_marginTop="160dp"
+
+        android:text="Heladera"
+        android:textSize="70sp"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/device_fridge_switch"
+
+        style="@style/DeviceTextBody"
+
+        android:layout_width="209dp"
+        android:layout_height="73dp"
+
+        android:layout_marginTop="48dp"
+
+        android:text="Encendido"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_fridge_image" />
+
+    <ImageView
+        android:id="@+id/device_fridge_image"
+        style="@style/DeviceImage"
+
+        android:layout_width="167dp"
+        android:layout_height="173dp"
+
+        android:layout_marginTop="32dp"
+        android:src="@drawable/refrigerator_bw"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_fridge_title"
+        app:tint="?android:tint" />
+
+    <LinearLayout
+        android:id="@+id/device_fridge_actions_layout"
+
+        android:layout_width="492dp"
+        android:layout_height="449dp"
+
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="172dp"
+
+
+        android:layout_weight="10"
+
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/device_fridge_temp_layout1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/device_fridge_slider_temp1"
+
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+
+                    android:stepSize="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
+                    app:tickVisible="false" />
+
+                <TextView
+                    android:id="@+id/device_fridge_slider_temp_indicator1"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="0"
+                    android:gravity="center"
+
+                    android:text="27%" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_fridge_slider_temp_hint1"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+
+                android:text="Temperatura (C)"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:id="@+id/device_fridge_temp_layout2"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/device_fridge_slider_temp2"
+
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+
+                    android:stepSize="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
+                    app:tickVisible="false" />
+
+                <TextView
+                    android:id="@+id/device_fridge_slider_temp_indicator2"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_weight="0"
+                    android:gravity="center"
+
+                    android:text="27%" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_fridge_slider_temp_hint2"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+
+                android:text="Temperatura Freezer (C)"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:id="@+id/device_fridge_types_layout1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/device_fridge_types_layout2"
+
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/champagneglass_bw"
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_fridge_types_hint1"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Fiesta"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_fridge_types_layout4"
+
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/refrigerator_small_bw"
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_fridge_types_hint3"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Normal"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_fridge_types_layout3"
+
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/beach_bw"
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_fridge_types_hint2"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Vacaciones"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    >
+
+</androidx.constraintlayout.widget.ConstraintLayout>

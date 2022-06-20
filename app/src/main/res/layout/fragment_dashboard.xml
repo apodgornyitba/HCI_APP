@@ -10,21 +10,21 @@
         android:id="@+id/recycler_view_routines"
         android:layout_width="325dp"
         android:layout_height="670dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/routines_text" />
 
     <TextView
         android:id="@+id/routines_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
         android:layout_marginTop="20dp"
         android:text="@string/routines"
         android:textColor="?android:textColorPrimary"
         android:textSize="38sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

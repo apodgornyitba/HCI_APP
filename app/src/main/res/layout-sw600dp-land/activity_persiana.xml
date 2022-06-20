@@ -12,7 +12,8 @@
         android:layout_marginTop="76dp"
 
         android:text="Persiana"
-        app:layout_constraintHorizontal_bias="0.093"
+        android:textSize="70sp"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
         android:layout_marginTop="4dp"
 
         android:text="Cerrado"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -39,10 +41,12 @@
         android:id="@+id/device_persiana_image"
         style="@style/DeviceImage"
 
-        android:layout_marginTop="16dp"
-        android:src="@drawable/curtain_bw"
+        android:layout_width="201dp"
+        android:layout_height="169dp"
 
-        app:layout_constraintHorizontal_bias="0.135"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/curtain_bw"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_persiana_title" />

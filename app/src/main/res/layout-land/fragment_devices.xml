@@ -11,23 +11,24 @@
 
         style="@style/ScreenTitle"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
 
         android:text="@string/Screen_Devices"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_devices_recycler_view"
 
-        android:layout_width="454dp"
-        android:layout_height="359dp"
+        android:layout_width="526dp"
+        android:layout_height="324dp"
 
-        android:layout_marginStart="268dp"
-
-        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.698"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
 </androidx.constraintlayout.widget.ConstraintLayout>
