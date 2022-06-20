@@ -95,6 +95,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        Log.d(TAG, "onDestroyView")
         super.onDestroyView()
         _binding = null
     }

@@ -2,6 +2,7 @@ package ar.edu.itba.hci_app.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,9 @@ import ar.edu.itba.hci_app.databinding.ActivityHomeBinding
 import ar.edu.itba.hci_app.ui.AboutUsActivity
 import ar.edu.itba.hci_app.ui.HelpActivity
 import ar.edu.itba.hci_app.ui.MainActivity
+import ar.edu.itba.hci_app.ui.dashboard.DashboardFragment
+import ar.edu.itba.hci_app.ui.devices.DevicesFragment
+import ar.edu.itba.hci_app.ui.notifications.NotificationsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -42,9 +46,20 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.setOnItemSelectedListener { item ->
+            Log.d(TAG, "setOnItemSelectedListener. item: $item")
 
+            var fragment = when (item.itemId) {
+                R.id.navigation_home -> HomeFragment()
+                R.id.navigation_dashboard -> DashboardFragment()
+                R.id.navigation_devices -> DevicesFragment()
+                R.id.navigation_notifications -> NotificationsFragment()
+                else -> HomeFragment()
+            }
+            replaceFragment(fragment, true)
 
-        replaceFragment(HomeFragment(), true)
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -76,11 +91,16 @@ class HomeActivity : AppCompatActivity() {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction();
         if (addToBackStack)
             transaction.addToBackStack(null);
+
         transaction.replace(R.id.nav_host_fragment_activity_home, newFragment);
         transaction.commit();
     }
 
     fun popBackStack() {
         supportFragmentManager.popBackStack()
+    }
+
+    companion object {
+        private const val TAG = "HomeActivity"
     }
 }
