@@ -4,8 +4,7 @@ public class Room {
 
     private String id;
     private String name;
-    private String size;
-    private String color;
+    private String image;
 
     public String getId() {
         return id;
@@ -23,31 +22,22 @@ public class Room {
         this.name = name;
     }
 
-    public String getSize() {
-        return size;
+    public String getImage() {
+        return image;
     }
 
-    public void setSize(String size) {
-        this.size = size;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getColor() {
-        return color;
+    public Room(String name, String image) {
+        this(null, name, image);
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Room(String name, String size, String color){
-        this(null, name, size, color);
-    }
-
-    public Room(String id, String name, String size, String color) {
+    public Room(String id, String name, String image) {
         this.id = id;
         this.name = name;
-        this.size = size;
-        this.color = color;
+        this.image = image;
     }
 
     @Override

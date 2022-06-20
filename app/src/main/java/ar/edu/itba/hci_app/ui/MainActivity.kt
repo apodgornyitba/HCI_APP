@@ -1,4 +1,4 @@
-package ar.edu.itba.hci_app
+package ar.edu.itba.hci_app.ui
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.TaskStackBuilder
+import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.databinding.ActivityMainBinding
+import ar.edu.itba.hci_app.ui.home.HomeActivity
 
 
 class MainActivity : AppCompatActivity() {

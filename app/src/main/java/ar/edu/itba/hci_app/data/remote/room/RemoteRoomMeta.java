@@ -5,26 +5,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class RemoteRoomMeta {
 
-    @SerializedName("size")
+    @SerializedName("image")
     @Expose
-    private String size;
-    @SerializedName("color")
-    @Expose
-    private String color;
+    private String image;
 
-    public String getSize() {
-        return size;
+    public String getImage() {
+        return image;
     }
 
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

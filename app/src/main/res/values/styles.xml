@@ -14,6 +14,26 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <!-- Home view -->
+    <style name="ErrorMessage" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:colorError</item>
+
+        <item name="android:textAlignment">center</item>
+    </style>
+
+
+    <style name="NoDataMessage" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:textColorHint</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
     <!-- Device view -->
     <style name="DeviceSliderTooltip" parent="Widget.MaterialComponents.Tooltip">
         <item name="android:textAppearance">@style/TextAppearance.DeviceSliderTooltip</item>

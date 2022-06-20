@@ -1,4 +1,4 @@
-package ar.edu.itba.hci_app
+package ar.edu.itba.hci_app.ui.devices
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import ar.edu.itba.hci_app.R
+import ar.edu.itba.hci_app.ui.devices.device.Speaker
 
 class DeviceAdapter constructor(private val dataSet: ArrayList<String>) :
     RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
@@ -21,7 +23,7 @@ class DeviceAdapter constructor(private val dataSet: ArrayList<String>) :
 
         holder.buttonDevice.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, DeviceSpeaker::class.java)
+            val intent = Intent(context, Speaker::class.java)
 
             context.startActivity(intent)
         }

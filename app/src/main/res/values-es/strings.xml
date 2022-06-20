@@ -41,6 +41,14 @@
     <string name="notification_title">Titulo de la Notificación</string>
     <string name="notification_text">Bienvenido a SMARTHOUSE, mucho gusto!</string>
 
+    <!-- Homes view -->
+    <string name="home_apierror_msg">
+        No fue posible acceder a Mi Hogar\n\nVolvé a intentarlo más tarde
+    </string>
+    <string name="home_no_data">
+        Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un cuarto para comenzar!
+    </string>
+
     <!-- Devices -->
     <string name="Screen_Devices">Mis dispositivos</string>
 

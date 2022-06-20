@@ -13,15 +13,12 @@ public class LocalRoom {
     public String id;
     @ColumnInfo(name = "name")
     public String name;
-    @ColumnInfo(name = "size")
-    public String size;
-    @ColumnInfo(name = "color")
-    public String color;
+    @ColumnInfo(name = "image")
+    public String image;
 
-    public LocalRoom(String id, String name, String size, String color) {
+    public LocalRoom(String id, String name, String image) {
         this.id = id;
         this.name = name;
-        this.size = size;
-        this.color = color;
+        this.image = image;
     }
 }

@@ -2,6 +2,7 @@ package ar.edu.itba.hci_app.data;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
@@ -40,21 +41,20 @@ public class RoomRepository {
     }
 
     private Room mapRoomLocalToModel(LocalRoom local) {
-        return new Room(local.id, local.name, local.size, local.color);
+        return new Room(local.id, local.name, local.image);
     }
 
     private LocalRoom mapRoomRemoteToLocal(RemoteRoom remote) {
-        return new LocalRoom(remote.getId(), remote.getName(), remote.getMeta().getSize(), remote.getMeta().getColor());
+        return new LocalRoom(remote.getId(), remote.getName(), remote.getMeta().getImage());
     }
 
     private Room mapRoomRemoteToModel(RemoteRoom remote) {
-        return new Room(remote.getId(), remote.getName(), remote.getMeta().getSize(), remote.getMeta().getColor());
+        return new Room(remote.getId(), remote.getName(), remote.getMeta().getImage());
     }
 
     private RemoteRoom mapRoomModelToRemote(Room model) {
         RemoteRoomMeta remoteMeta = new RemoteRoomMeta();
-        remoteMeta.setSize(model.getSize());
-        remoteMeta.setColor(model.getColor());
+        remoteMeta.setImage(model.getImage());
 
         RemoteRoom remote = new RemoteRoom();
         remote.setId(model.getId());
@@ -202,7 +202,9 @@ public class RoomRepository {
                     RemoteRoom remote2 = mapRoomModelToRemote(room);
                     return mapRoomRemoteToLocal(remote2);
                 },
-                remote -> { return room; }) {
+                remote -> {
+                    return room;
+                }) {
 
             @Override
             protected void saveCallResult(@NonNull LocalRoom local) {
