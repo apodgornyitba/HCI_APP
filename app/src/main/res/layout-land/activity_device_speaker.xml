@@ -50,8 +50,8 @@
         android:layout_height="76dp"
         android:layout_gravity="center"
 
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/roundcorner"
         android:gravity="center"
         android:padding="15dp"
@@ -63,26 +63,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black" />
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/device_speaker_slider_volume"
+    <TextView
+        android:id="@+id/device_speaker_playlist_hint"
 
-        android:layout_width="376dp"
-        android:layout_height="46dp"
+        style="@style/DeviceTextSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:layout_gravity="center"
 
-        android:layout_marginStart="320dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="52dp"
+        android:text="Lista de reproducción"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        android:layout_marginTop="168dp"
-        android:layout_weight="1"
-        android:stepSize="1"
-        android:valueFrom="0"
-        android:valueTo="100"
-        app:labelBehavior="floating"
-        app:labelStyle="@style/DeviceSliderTooltip"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tickVisible="false" />
+    <TextView
+        android:id="@+id/device_speaker_current_song"
+
+        style="@style/DeviceTextBody"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+
+        android:layout_marginEnd="336dp"
+
+        android:layout_marginBottom="96dp"
+        android:ellipsize="end"
+        android:text="Aces High - Iron Maiden"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/device_speaker_current_song_hint"
@@ -94,12 +109,49 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="340dp"
+        android:layout_marginBottom="60dp"
         android:text="Reproduciendo actualmente"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginStart="588dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_outline_skip_next_48"
+
+        app:iconGravity="top"
+        app:iconSize="48dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton2"
+        android:layout_width="0dp"
+
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/ic_outline_skip_previous_48"
+        app:iconGravity="top"
+        app:iconSize="48dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/device_speaker_slider_volume_indicator"
@@ -111,13 +163,32 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="132dp"
 
         android:layout_weight="0"
         android:gravity="center"
         android:text="27%"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton3"
+        android:layout_width="0dp"
+
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="500dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/ic_baseline_pause_48"
+        app:iconGravity="top"
+        app:iconSize="48dp"
+        app:iconTint="?colorPrimaryVariant"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -130,31 +201,12 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="356dp"
         android:text="Pausado"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/device_speaker_current_song"
-
-        style="@style/DeviceTextBody"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-
-        android:layout_marginEnd="324dp"
-
-        android:layout_marginBottom="92dp"
-        android:ellipsize="end"
-        android:text="Aces High - Iron Maiden"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton4"
@@ -164,49 +216,11 @@
 
         android:layout_gravity="center"
         android:layout_marginStart="412dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
         android:background="@color/transparent"
 
         app:icon="@drawable/ic_outline_stop_48"
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?android:textColorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton3"
-        android:layout_width="0dp"
-
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-        android:layout_marginStart="500dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-
-        app:icon="@drawable/ic_baseline_pause_48"
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?colorPrimaryVariant"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
-        android:layout_width="0dp"
-
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-
-        app:icon="@drawable/ic_outline_skip_previous_48"
         app:iconGravity="top"
         app:iconSize="48dp"
         app:iconTint="?android:textColorPrimary"
@@ -223,47 +237,35 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="356dp"
         android:text="Volumen"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="0dp"
-        android:layout_height="64dp"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/device_speaker_slider_volume"
+
+        android:layout_width="376dp"
+        android:layout_height="46dp"
 
         android:layout_gravity="center"
 
-        android:layout_marginStart="588dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="320dp"
+
+        android:layout_marginTop="136dp"
         android:layout_weight="1"
-        android:background="@color/transparent"
-        app:icon="@drawable/ic_outline_skip_next_48"
-
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?android:textColorPrimary"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:labelBehavior="floating"
+        app:labelStyle="@style/DeviceSliderTooltip"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tickVisible="false" /><![CDATA[
 
-    <TextView
-        android:id="@+id/device_speaker_playlist_hint"
 
-        style="@style/DeviceTextSubtitle"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="36dp"
-        android:text="Lista de reproducción"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" /><![CDATA[
 
 
 
@@ -273,6 +275,7 @@
 
 
     >
+
 
 
 

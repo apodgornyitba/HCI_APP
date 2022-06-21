@@ -12,6 +12,7 @@
         android:layout_marginTop="40dp"
 
         android:text="Parlante"
+        android:textSize="70sp"
         app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,10 +22,12 @@
         android:id="@+id/device_speaker_image"
         style="@style/DeviceImage"
 
-        android:layout_marginTop="28dp"
-        android:src="@drawable/speaker_bw"
+        android:layout_width="270dp"
+        android:layout_height="193dp"
 
-        app:layout_constraintHorizontal_bias="0.112"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/speaker_bw"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_speaker_title" />
@@ -40,18 +43,19 @@
         android:layout_marginTop="32dp"
 
         android:text="Encendido"
-        app:layout_constraintHorizontal_bias="0.077"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_speaker_image" />
 
     <ImageButton
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
 
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="500dp"
+        android:layout_marginBottom="316dp"
         android:background="@drawable/roundcorner"
         android:gravity="center"
         android:padding="15dp"
@@ -63,44 +67,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black" />
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/device_speaker_slider_volume"
-
-        android:layout_width="376dp"
-        android:layout_height="46dp"
-
-        android:layout_gravity="center"
-
-        android:layout_marginStart="320dp"
-
-        android:layout_marginTop="168dp"
-        android:layout_weight="1"
-        android:stepSize="1"
-        android:valueFrom="0"
-        android:valueTo="100"
-        app:labelBehavior="floating"
-        app:labelStyle="@style/DeviceSliderTooltip"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tickVisible="false" />
-
-    <TextView
-        android:id="@+id/device_speaker_current_song_hint"
-
-        style="@style/DeviceTextSubtitle"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="56dp"
-        android:text="Reproduciendo actualmente"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <TextView
         android:id="@+id/device_speaker_slider_volume_indicator"
 
@@ -111,29 +77,12 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="260dp"
 
         android:layout_weight="0"
         android:gravity="center"
         android:text="27%"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/device_speaker_control_hint"
-
-        style="@style/DeviceTextSubtitle"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="340dp"
-        android:text="Pausado"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,74 +96,17 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginEnd="324dp"
+        android:layout_marginEnd="444dp"
 
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="468dp"
         android:ellipsize="end"
         android:text="Aces High - Iron Maiden"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton4"
-        android:layout_width="0dp"
-
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-        android:layout_marginStart="412dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-
-        app:icon="@drawable/ic_outline_stop_48"
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?android:textColorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton3"
-        android:layout_width="0dp"
-
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-        android:layout_marginStart="500dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-
-        app:icon="@drawable/ic_baseline_pause_48"
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?colorPrimaryVariant"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
-        android:layout_width="0dp"
-
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-
-        app:icon="@drawable/ic_outline_skip_previous_48"
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?android:textColorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/device_speaker_slider_volume_hint"
+        android:id="@+id/device_speaker_current_song_hint"
 
         style="@style/DeviceTextSubtitle"
 
@@ -223,30 +115,12 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="340dp"
-        android:text="Volumen"
+        android:layout_marginEnd="448dp"
+        android:layout_marginBottom="432dp"
+        android:text="Reproduciendo actualmente"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-
-        android:layout_gravity="center"
-
-        android:layout_marginStart="588dp"
-        android:layout_marginTop="72dp"
-        android:layout_weight="1"
-        android:background="@color/transparent"
-        app:icon="@drawable/ic_outline_skip_next_48"
-
-        app:iconGravity="top"
-        app:iconSize="48dp"
-        app:iconTint="?android:textColorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/device_speaker_playlist_hint"
@@ -258,21 +132,155 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="448dp"
+        android:layout_marginBottom="276dp"
         android:text="Lista de reproducción"
         android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" /><![CDATA[
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="64dp"
 
-    
+        android:layout_gravity="center"
+
+        android:layout_marginStart="804dp"
+        android:layout_marginTop="104dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_outline_skip_next_48"
+
+        app:iconGravity="top"
+        app:iconSize="60dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/device_speaker_control_hint"
+
+        style="@style/DeviceTextSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="524dp"
+        android:text="Pausado"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton4"
+        android:layout_width="0dp"
+
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="628dp"
+        android:layout_marginTop="104dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/ic_outline_stop_48"
+        app:iconGravity="top"
+        app:iconSize="60dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton2"
+        android:layout_width="0dp"
+
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="540dp"
+        android:layout_marginTop="104dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/ic_outline_skip_previous_48"
+        app:iconGravity="top"
+        app:iconSize="60dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton3"
+        android:layout_width="0dp"
+
+        android:layout_height="64dp"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="716dp"
+        android:layout_marginTop="104dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/ic_baseline_pause_48"
+        app:iconGravity="top"
+        app:iconSize="60dp"
+        app:iconTint="?colorPrimaryVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/device_speaker_slider_volume"
+
+        android:layout_width="483dp"
+        android:layout_height="49dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginStart="472dp"
+
+        android:layout_marginTop="200dp"
+        android:layout_weight="1"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:labelBehavior="floating"
+        app:labelStyle="@style/DeviceSliderTooltip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tickVisible="false" />
+
+    <TextView
+        android:id="@+id/device_speaker_slider_volume_hint"
+
+        style="@style/DeviceTextSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="524dp"
+        android:text="Volumen"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+
+
+
+
+
+
 
 
 
 
     >
+
 
 
 
