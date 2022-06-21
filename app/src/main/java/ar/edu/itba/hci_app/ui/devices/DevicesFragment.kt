@@ -75,7 +75,7 @@ class DevicesFragment : Fragment() {
 
                             binding.empty?.visibility = View.GONE
                         } else {
-                            binding.recyclerViewDevice.visibility = View.GONE
+                            binding.recyclerViewDevice?.visibility = View.GONE
                             binding.empty?.visibility = View.VISIBLE
                         }
                     }
@@ -86,10 +86,10 @@ class DevicesFragment : Fragment() {
                 }
             }
 
-            binding.recyclerViewDevice.setHasFixedSize(true)
-            binding.recyclerViewDevice.layoutManager =
+            binding.recyclerViewDevice?.setHasFixedSize(true)
+            binding.recyclerViewDevice?.layoutManager =
                 StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-            binding.recyclerViewDevice.adapter = adapter
+            binding.recyclerViewDevice?.adapter = adapter
         } catch (e: Exception) {
             Log.e(TAG, "onCreateView", e)
             throw e
@@ -108,19 +108,19 @@ class DevicesFragment : Fragment() {
     private fun setWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Set")
         activity.setWaitingForAPI()
-        binding.recyclerViewDevice.visibility = View.GONE
+        binding.recyclerViewDevice?.visibility = View.GONE
     }
 
     private fun removeWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Remove")
         activity.removeWaitingForAPI()
-        binding.recyclerViewDevice.visibility = View.VISIBLE
+        binding.recyclerViewDevice?.visibility = View.VISIBLE
     }
 
     private fun setErrorStatusWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Error")
         activity.setErrorStatusWaitingForAPI()
-        binding.recyclerViewDevice.visibility = View.INVISIBLE
+        binding.recyclerViewDevice?.visibility = View.INVISIBLE
     }
 
     companion object {
