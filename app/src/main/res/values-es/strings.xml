@@ -48,6 +48,9 @@
     <string name="home_no_data">
         Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un cuarto para comenzar!
     </string>
+    <string name="devices_no_data">
+        Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un dispositivo para comenzar!
+    </string>
 
     <!-- Devices -->
     <string name="Screen_Devices">Mis dispositivos</string>

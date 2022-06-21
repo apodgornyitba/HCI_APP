@@ -41,6 +41,7 @@
     <!-- Homes view -->
     <string name="home_apierror_msg">Could not access to My House\n\nTry again later</string>
     <string name="home_no_data">There are no rooms here!\n\nLet\'s add one!</string>
+    <string name="devices_no_data">There are no devices here!\n\nLet\'s add one!</string>
 
     <!-- Devices -->
     <string name="Screen_Devices">My Devices</string>

@@ -65,6 +65,10 @@ public class RoomRepository {
     }
 
     public LiveData<Resource<List<Room>>> getRooms() {
+        return getRooms(false);
+    }
+
+    public LiveData<Resource<List<Room>>> getRooms(Boolean forceAPICall) {
         Log.d(TAG, "RoomRepository - getRooms()");
         return new NetworkBoundResource<List<Room>, List<LocalRoom>, List<RemoteRoom>>(
                 executors,
@@ -91,7 +95,10 @@ public class RoomRepository {
 
             @Override
             protected boolean shouldFetch(@Nullable List<LocalRoom> locals) {
-                return ((locals == null) || (locals.size() == 0) || rateLimit.shouldFetch(RATE_LIMITER_ALL_KEY));
+                return ((locals == null)
+                        || (locals.size() == 0)
+                        || rateLimit.shouldFetch(RATE_LIMITER_ALL_KEY))
+                        || forceAPICall;
             }
 
             @Override

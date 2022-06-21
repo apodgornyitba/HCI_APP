@@ -57,6 +57,7 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$ok_http_version"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

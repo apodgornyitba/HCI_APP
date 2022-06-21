@@ -76,6 +76,10 @@ public class DeviceRepository {
     }
 
     public LiveData<Resource<List<Device>>> getDevices() {
+        return getDevices(false);
+    }
+
+    public LiveData<Resource<List<Device>>> getDevices(Boolean forceAPICall) {
         Log.d(TAG, "DeviceRepository - getDevices()");
         return new NetworkBoundResource<List<Device>, List<LocalDevice>, List<RemoteDevice>>(
                 executors,
@@ -102,7 +106,10 @@ public class DeviceRepository {
 
             @Override
             protected boolean shouldFetch(@Nullable List<LocalDevice> locals) {
-                return ((locals == null) || (locals.size() == 0) || rateLimit.shouldFetch(RATE_LIMITER_ALL_KEY));
+                return ((locals == null)
+                        || (locals.size() == 0)
+                        || rateLimit.shouldFetch(RATE_LIMITER_ALL_KEY))
+                        || forceAPICall;
             }
 
             @Override

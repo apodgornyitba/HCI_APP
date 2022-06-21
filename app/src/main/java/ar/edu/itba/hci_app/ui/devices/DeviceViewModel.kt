@@ -30,7 +30,12 @@ class DeviceViewModel constructor(repository: DeviceRepository) :
     }
 
     fun getDevices(): LiveData<Resource<List<Device>>> {
-        loadDevices()
+        loadDevices(false)
+        return devices
+    }
+
+    fun getDevices(forceAPICall: Boolean): LiveData<Resource<List<Device>>> {
+        loadDevices(forceAPICall)
         return devices
     }
 
@@ -57,8 +62,8 @@ class DeviceViewModel constructor(repository: DeviceRepository) :
         this.deviceId.value = deviceId
     }
 
-    private fun loadDevices() {
-        devices.addSource(repository.devices) { resource: Resource<List<Device>> ->
+    private fun loadDevices(forceAPICall: Boolean) {
+        devices.addSource(repository.getDevices(forceAPICall)) { resource: Resource<List<Device>> ->
             if (resource.status == Status.SUCCESS) {
                 devices.setValue(
                     Resource.success(

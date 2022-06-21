@@ -33,7 +33,12 @@ public class RoomViewModel extends RepositoryViewModel<RoomRepository> {
     }
 
     public LiveData<Resource<List<Room>>> getRooms() {
-        loadRooms();
+        loadRooms(false);
+        return rooms;
+    }
+
+    public LiveData<Resource<List<Room>>> getRooms(Boolean forceAPICall) {
+        loadRooms(forceAPICall);
         return rooms;
     }
 
@@ -62,8 +67,8 @@ public class RoomViewModel extends RepositoryViewModel<RoomRepository> {
         this.roomId.setValue(roomId);
     }
 
-    private void loadRooms() {
-        rooms.addSource(repository.getRooms(), resource -> {
+    private void loadRooms(Boolean forceAPICall) {
+        rooms.addSource(repository.getRooms(forceAPICall), resource -> {
             if (resource.status == Status.SUCCESS) {
                 rooms.setValue(Resource.success(resource.data));
             } else {
