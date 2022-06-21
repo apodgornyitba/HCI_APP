@@ -21,7 +21,7 @@ class DeviceAdapter constructor(private val dataSet: ArrayList<String>) :
 
         holder.buttonDevice.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, PersianaActivity::class.java)
+            val intent = Intent(context, DeviceOven::class.java)
 
             context.startActivity(intent)
         }

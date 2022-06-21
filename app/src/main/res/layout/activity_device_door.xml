@@ -9,8 +9,9 @@
     <TextView
         android:id="@+id/device_door_title"
         style="@style/DeviceNameText"
-        android:text="Puerta"
+        android:layout_marginTop="60dp"
 
+        android:text="Puerta"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
 
-        android:text="Cerrado"
+        android:layout_marginTop="8dp"
 
+        android:text="Cerrado"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_door_image" />

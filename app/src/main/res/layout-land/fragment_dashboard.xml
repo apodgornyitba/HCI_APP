@@ -8,14 +8,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_routines"
-        android:layout_width="572dp"
-        android:layout_height="297dp"
+        android:layout_width="452dp"
+        android:layout_height="247dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <TextView
         android:id="@+id/routines_text"
@@ -27,7 +27,7 @@
         android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

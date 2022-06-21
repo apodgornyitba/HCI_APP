@@ -9,9 +9,10 @@
     <TextView
         android:id="@+id/device_persiana_title"
         style="@style/DeviceNameText"
+        android:layout_marginTop="60dp"
         android:text="Persiana"
-        android:textSize="70sp"
 
+        android:textSize="70sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

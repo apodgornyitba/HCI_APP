@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/device_door_title"
         style="@style/DeviceNameText"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="60dp"
 
         android:text="Puerta"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,10 +21,10 @@
         android:id="@+id/device_door_image"
         style="@style/DeviceImage"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/door_bw"
 
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_door_title" />
@@ -54,8 +54,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toEndOf="@+id/device_door_image"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429">
 
         <LinearLayout
             android:id="@+id/device_door_layout2"
@@ -95,7 +97,7 @@
         <LinearLayout
             android:id="@+id/device_door_layout3"
 
-            android:layout_width="184dp"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
 
             android:orientation="vertical">

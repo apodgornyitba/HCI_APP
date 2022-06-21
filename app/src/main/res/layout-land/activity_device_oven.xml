@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/device_oven_title"
         style="@style/DeviceNameText"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="60dp"
 
         android:text="Horno"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,10 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
 
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
 
         android:text="Encendido"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_oven_image" />
@@ -37,10 +37,10 @@
         android:id="@+id/device_oven_image"
         style="@style/DeviceImage"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/oven_bw"
 
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_oven_title" />
@@ -48,11 +48,11 @@
     <LinearLayout
         android:id="@+id/device_oven_actions_layout"
 
-        android:layout_width="497dp"
-        android:layout_height="319dp"
+        android:layout_width="490dp"
+        android:layout_height="281dp"
 
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="28dp"
 
 
         android:layout_weight="10"
@@ -127,7 +127,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="16dp"
             android:layout_weight="4" />
 
         <LinearLayout
@@ -141,8 +141,8 @@
             <LinearLayout
                 android:id="@+id/device_oven_types_layout1"
 
-                android:layout_width="152dp"
-                android:layout_height="wrap_content"
+                android:layout_width="151dp"
+                android:layout_height="match_parent"
 
                 android:orientation="vertical">
 
@@ -296,7 +296,7 @@
             <LinearLayout
                 android:id="@+id/device_oven_types2_layout2"
 
-                android:layout_width="171dp"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
