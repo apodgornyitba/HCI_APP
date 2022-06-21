@@ -1,8 +1,9 @@
-package ar.edu.itba.hci_app
+package ar.edu.itba.hci_app.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import ar.edu.itba.hci_app.R
 
 class SettingsActivity : AppCompatActivity() {
 

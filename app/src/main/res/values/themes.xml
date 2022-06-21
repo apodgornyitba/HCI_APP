@@ -24,6 +24,8 @@
         <item name="android:textColorPrimaryDisableOnly">@color/grey_300</item>
         <item name="android:textColorPrimaryInverse">@color/white_600</item>
 
+        <item name="android:colorError">@color/red_500</item>
+
         <item name="android:textColorHint">@color/grey_400</item>
 
         <item name="textColorPrimaryButton">@color/black_400</item>

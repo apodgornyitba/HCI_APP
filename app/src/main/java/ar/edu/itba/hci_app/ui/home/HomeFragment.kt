@@ -1,64 +1,146 @@
 package ar.edu.itba.hci_app.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import ar.edu.itba.hci_app.RoomAdapter
-import ar.edu.itba.hci_app.R
+import ar.edu.itba.hci_app.ui.home.room.RoomAdapter
+import ar.edu.itba.hci_app.SmartHouse
+import ar.edu.itba.hci_app.data.RoomRepository
 import ar.edu.itba.hci_app.databinding.FragmentHomeBinding
+import ar.edu.itba.hci_app.model.Room
+import ar.edu.itba.hci_app.ui.RepositoryViewModelFactory
+import ar.edu.itba.hci_app.data.Status
+import ar.edu.itba.hci_app.ui.home.room.RoomViewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private lateinit var adapter: RoomAdapter
-    private var dataSet = ArrayList<String>()
+    private var dataSet = ArrayList<Room>()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var activity: HomeActivity
+    private lateinit var viewModel: RoomViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        super.onCreate(savedInstanceState)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        try {
+            activity = requireActivity() as HomeActivity
+            val application = activity.application as SmartHouse
+            val viewModelFactory: ViewModelProvider.Factory =
+                RepositoryViewModelFactory(
+                    RoomRepository::class.java,
+                    application.getRoomRepository()
+                )
 
-        for(i in 1..10) addItem(i)
+            viewModel =
+                ViewModelProvider(this, viewModelFactory).get(RoomViewModel::class.java)
 
-        adapter = RoomAdapter(dataSet)
-//        binding.recyclerViewRoom.layoutManager = LinearLayoutManager(this.context)
-//        binding.recyclerViewRoom.layoutManager = GridLayoutManager(this.context, 3
-//            , RecyclerView.HORIZONTAL, false);
-        binding.recyclerViewHome.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
-        binding.recyclerViewHome.adapter = adapter
+            _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-//        binding.fab.setOnClickListener {
-//            addItem(dataSet.size + 1)
-//            adapter.notifyItemInserted(dataSet.size)
-//
-        return root
+            adapter = RoomAdapter(this.requireContext(), dataSet)
+
+            loadViewModel(false)
+
+            binding.recyclerViewHome.setHasFixedSize(true)
+            binding.recyclerViewHome.layoutManager =
+                StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+            binding.recyclerViewHome.adapter = adapter
+
+
+            binding.swiperefresh?.setOnRefreshListener {
+                refreshAction()
+                binding.swiperefresh?.isRefreshing = false
+            }
+
+        } catch (e: Exception) {
+            Log.e(TAG, "onCreateView", e)
+            throw e
+        }
+
+
+        return binding.root
     }
 
     override fun onDestroyView() {
+        Log.d(TAG, "onDestroyView")
         super.onDestroyView()
         _binding = null
     }
 
-    private fun addItem(index: Int){
-        val itemText = resources.getString(R.string.room_type, index)
-        dataSet.add(itemText)
+    private fun refreshAction() {
+        Log.d(TAG, "OnRefreshListener")
+        loadViewModel(true)
+    }
 
+    private fun loadViewModel(forceAPICall: Boolean) {
+        viewModel.getRooms(forceAPICall).observe(viewLifecycleOwner) { resource ->
+            when (resource.status) {
+                Status.LOADING -> {
+                    Log.d(TAG, "Resource status: LOADING")
+                    setWaitingForAPI()
+                }
+                Status.SUCCESS -> run {
+                    Log.d(TAG, "Resource status: SUCCESS")
+                    removeWaitingForAPI()
+
+                    // Avoid displaying cached information (in database) on API error
+                    if (activity.isErrorStatusWaitingForAPI())
+                        return@run
+
+                    dataSet.clear()
+
+                    if (!resource.data.isNullOrEmpty()) {
+                        dataSet.addAll(resource.data)
+                        adapter.notifyDataSetChanged()
+
+                        binding.empty?.visibility = View.GONE
+                    } else {
+                        binding.recyclerViewHome.visibility = View.GONE
+                        binding.empty?.visibility = View.VISIBLE
+                    }
+                }
+                else -> {
+                    Log.d(TAG, "Resource status: ${resource.status}. Treated as ERROR.")
+                    setErrorStatusWaitingForAPI()
+                }
+            }
+        }
+    }
+
+    private fun setWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Set")
+        activity.setWaitingForAPI()
+        binding.recyclerViewHome.visibility = View.GONE
+    }
+
+    private fun removeWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Remove")
+        activity.removeWaitingForAPI()
+        binding.recyclerViewHome.visibility = View.VISIBLE
+    }
+
+    private fun setErrorStatusWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Error")
+        activity.setErrorStatusWaitingForAPI()
+        binding.recyclerViewHome.visibility = View.INVISIBLE
+    }
+
+    companion object {
+        private const val TAG = "HomeFragment"
     }
 }
