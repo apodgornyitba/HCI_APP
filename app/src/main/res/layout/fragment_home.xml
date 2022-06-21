@@ -23,21 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_name_text" />
 
-    <ProgressBar
-        android:id="@+id/loading"
-        style="?android:attr/progressBarStyleLarge"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:indeterminate="true"
-        android:visibility="visible"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_name_text" />
-
     <TextView
         android:id="@+id/empty"
         style="@style/NoDataMessage"
@@ -52,21 +37,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_name_text" />
-
-    <TextView
-        android:id="@+id/api_error_message"
-        style="@style/ErrorMessage"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_apierror_msg"
-
-        android:visibility="gone"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/home_name_text" />
 
     <TextView
         android:id="@+id/home_name_text"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -104,6 +105,24 @@ class HomeActivity : AppCompatActivity() {
         Log.d(TAG, "popBackStack")
         supportFragmentManager.popBackStack()
     }
+
+    fun setWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Set")
+        binding.loading?.visibility = View.VISIBLE
+    }
+
+    fun removeWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Remove")
+        binding.loading?.visibility = View.GONE
+    }
+
+    fun setErrorStatusWaitingForAPI() {
+        Log.d(TAG, "WaitingForAPI: Error")
+        binding.loading?.visibility = View.GONE
+        binding.apiErrorMessage?.visibility = View.VISIBLE
+    }
+
+    fun isErrorStatusWaitingForAPI() = binding.apiErrorMessage?.visibility == View.VISIBLE
 
     companion object {
         private const val TAG = "HomeActivity"

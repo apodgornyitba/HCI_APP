@@ -1,9 +1,11 @@
-package ar.edu.itba.hci_app.data.remote.room;
+package ar.edu.itba.hci_app.data.remote.device;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RemoteRoom {
+import ar.edu.itba.hci_app.data.remote.room.RemoteRoomMeta;
+
+public class RemoteDevice {
 
     @SerializedName("id")
     @Expose
@@ -13,7 +15,7 @@ public class RemoteRoom {
     private String name;
     @SerializedName("meta")
     @Expose
-    private RemoteRoomMeta meta;
+    private RemoteDeviceMeta meta;
 
     public String getId() {
         return id;
@@ -31,11 +33,11 @@ public class RemoteRoom {
         this.name = name;
     }
 
-    public RemoteRoomMeta getMeta() {
+    public RemoteDeviceMeta getMeta() {
         return meta;
     }
 
-    public void setMeta(RemoteRoomMeta meta) {
+    public void setMeta(RemoteDeviceMeta meta) {
         this.meta = meta;
     }
 }

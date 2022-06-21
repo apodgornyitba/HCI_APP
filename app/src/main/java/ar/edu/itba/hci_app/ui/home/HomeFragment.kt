@@ -28,6 +28,8 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var activity: HomeActivity
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,7 +38,7 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         try {
-            val activity: HomeActivity = requireActivity() as HomeActivity
+            activity = requireActivity() as HomeActivity
             val application = activity.application as SmartHouse
             val viewModelFactory: ViewModelProvider.Factory =
                 RepositoryViewModelFactory(
@@ -58,13 +60,17 @@ class HomeFragment : Fragment() {
                         Log.d(TAG, "Resource status: LOADING")
                         setWaitingForAPI()
                     }
-                    Status.SUCCESS -> {
+                    Status.SUCCESS -> run {
                         Log.d(TAG, "Resource status: SUCCESS")
                         removeWaitingForAPI()
 
+                        // Avoid displaying cached information (in database) on API error
+                        if (activity.isErrorStatusWaitingForAPI())
+                            return@run
+
                         dataSet.clear()
 
-                        if (resource.data != null && resource.data.size > 0) {
+                        if (!resource.data.isNullOrEmpty()) {
                             dataSet.addAll(resource.data)
                             adapter.notifyDataSetChanged()
 
@@ -100,24 +106,22 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-
     private fun setWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Set")
-        binding.loading?.visibility = View.VISIBLE
+        activity.setWaitingForAPI()
         binding.recyclerViewHome.visibility = View.GONE
     }
 
     private fun removeWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Remove")
-        binding.loading?.visibility = View.GONE
+        activity.removeWaitingForAPI()
         binding.recyclerViewHome.visibility = View.VISIBLE
     }
 
     private fun setErrorStatusWaitingForAPI() {
         Log.d(TAG, "WaitingForAPI: Error")
-        binding.loading?.visibility = View.GONE
+        activity.setErrorStatusWaitingForAPI()
         binding.recyclerViewHome.visibility = View.INVISIBLE
-        binding.apiErrorMessage?.visibility = View.VISIBLE
     }
 
     companion object {
