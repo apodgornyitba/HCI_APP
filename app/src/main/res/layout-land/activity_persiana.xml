@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PersianaActivity">
+    tools:context=".ui.devices.device.Persiana">
 
     <TextView
         android:id="@+id/device_persiana_title"
@@ -15,6 +15,25 @@
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="72dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_baseline_star_outline_24"
+        app:iconGravity="top"
+
+        app:iconSize="35dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/device_persiana_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -34,12 +53,12 @@
 
         style="@style/DeviceTextBody"
 
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
+        android:layout_width="126dp"
+        android:layout_height="54dp"
 
         android:layout_marginTop="4dp"
 
-        android:text="Cerrado"
+        android:text="@string/switch1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,7 +145,7 @@
 
                 android:layout_gravity="center"
 
-                android:text="Posición"
+                android:text="@string/persiana1"
                 android:textAlignment="center" />
         </LinearLayout>
 

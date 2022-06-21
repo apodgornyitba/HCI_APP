@@ -46,6 +46,33 @@
 
     <!-- Devices -->
     <string name="Screen_Devices">My Devices</string>
+    <string name="switch1">Closed</string>
+    <string name="switch2">Opened</string>
+    <string name="switch3">On</string>
+    <string name="switch4">Off</string>
+
+    <string name="door1">Unlock</string>
+    <string name="door2">Lock</string>
+
+    <string name="fridge1">Temperature</string>
+    <string name="fridge2">Temperature freezer</string>
+    <string name="fridge3">Party</string>
+    <string name="fridge4">Normal</string>
+    <string name="fridge5">Holiday</string>
+
+    <string name="oven1">Temperature</string>
+    <string name="oven2">Low</string>
+    <string name="oven3">High</string>
+    <string name="oven4">Conventional</string>
+    <string name="oven5">Grill</string>
+    <string name="oven6">Convector</string>
+
+    <string name="speaker1">Volume</string>
+    <string name="speaker2">Paused</string>
+    <string name="speaker3">Playlist</string>
+
+    <string name="persiana1">Position</string>
+
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->

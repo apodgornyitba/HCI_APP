@@ -50,6 +50,35 @@
 
     <!-- Devices -->
     <string name="Screen_Devices">Mis dispositivos</string>
+
+    <string name="switch1">Cerrado</string>
+    <string name="switch2">Abierto</string>
+    <string name="switch3">Encendido</string>
+    <string name="switch4">Apagado</string>
+
+    <string name="door1">Desbloquear</string>
+    <string name="door2">Bloquear</string>
+
+    <string name="fridge1">Temperatura</string>
+    <string name="fridge2">Temperatura freezer</string>
+    <string name="fridge3">Fiesta</string>
+    <string name="fridge4">Normal</string>
+    <string name="fridge5">Vacaciones</string>
+
+    <string name="oven1">Temperature</string>
+    <string name="oven2">Abajo</string>
+    <string name="oven3">Arriba</string>
+    <string name="oven4">Convencional</string>
+    <string name="oven5">Grill</string>
+    <string name="oven6">Convector</string>
+
+    <string name="speaker1">Volumen</string>
+    <string name="speaker2">Pausado</string>
+    <string name="speaker3">Lista de reproducción</string>
+
+    <string name="persiana1">Posición</string>
+
+
     <string name="routines_no_data">Está vacío, ¿ves? No hay monstruos aquí  ¡Agreguemos una rutina para comenzar!</string>
 
 </resources>

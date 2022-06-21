@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceOven">
+    tools:context=".ui.devices.device.Oven">
 
     <TextView
         android:id="@+id/device_oven_title"
@@ -15,6 +15,25 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="68dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_baseline_star_outline_24"
+        app:iconGravity="top"
+
+        app:iconSize="35dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/device_oven_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -37,7 +56,7 @@
 
         android:layout_marginTop="8dp"
 
-        android:text="Encendido"
+        android:text="@string/switch4"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -125,7 +144,7 @@
 
                 android:layout_gravity="center"
 
-                android:text="Temperatura (C)"
+                android:text="@string/oven1"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -173,7 +192,7 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Abajo"
+                    android:text="@string/oven2"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -208,7 +227,7 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Convencional"
+                    android:text="@string/oven4"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -243,7 +262,7 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Arriba"
+                    android:text="@string/oven3"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -265,7 +284,7 @@
             <LinearLayout
                 android:id="@+id/device_oven_types2_layout1"
 
-                android:layout_width="176dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:orientation="vertical">
@@ -293,15 +312,45 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Grill"
+                    android:text="@string/oven5"
                     android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_oven_types2_layout4"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="89dp"
+                tools:layout_editor_absoluteY="687dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="2" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="189dp"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="89dp"
+                    tools:layout_editor_absoluteY="687dp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/device_oven_types2_layout2"
 
-                android:layout_width="171dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
 
                 android:orientation="vertical">
 
@@ -328,7 +377,7 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Convector"
+                    android:text="@string/oven6"
                     android:textAlignment="center" />
             </LinearLayout>
 

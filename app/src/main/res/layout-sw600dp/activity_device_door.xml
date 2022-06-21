@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceDoor">
+    tools:context=".ui.devices.device.Door">
 
     <TextView
         android:id="@+id/device_door_title"
@@ -16,12 +16,31 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="72dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_baseline_star_outline_24"
+        app:iconGravity="top"
+
+        app:iconSize="50dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toEndOf="@+id/device_door_title"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/device_door_image"
         style="@style/DeviceImage"
 
-        android:layout_width="156dp"
-        android:layout_height="135dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
 
         android:src="@drawable/door_bw"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -38,7 +57,7 @@
         android:layout_height="63dp"
 
         android:layout_marginTop="4dp"
-        android:text="Cerrado"
+        android:text="@string/switch1"
 
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -77,7 +96,7 @@
             <LinearLayout
                 android:id="@+id/device_door_layout2"
 
-                android:layout_width="365dp"
+                android:layout_width="448dp"
                 android:layout_height="match_parent"
 
                 android:orientation="vertical">
@@ -105,7 +124,7 @@
 
                     android:layout_gravity="center"
 
-                    android:text="Desbloquear"
+                    android:text="@string/door1"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -142,7 +161,7 @@
 
                 android:layout_gravity="center"
 
-                android:text="Bloquear"
+                android:text="@string/door2"
                 android:textSize="20sp"
                 android:textAlignment="center" />
             </LinearLayout>

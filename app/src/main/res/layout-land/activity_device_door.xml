@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeviceDoor">
+    tools:context=".ui.devices.device.Door">
 
     <TextView
         android:id="@+id/device_door_title"
@@ -15,6 +15,25 @@
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="68dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_baseline_star_outline_24"
+        app:iconGravity="top"
+
+        app:iconSize="35dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toEndOf="@+id/device_door_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -39,7 +58,7 @@
 
         android:layout_marginTop="8dp"
 
-        android:text="Cerrado"
+        android:text="@string/switch1"
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -90,7 +109,7 @@
 
                 android:layout_gravity="center"
 
-                android:text="Desbloquear"
+                android:text="@string/door1"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -126,7 +145,7 @@
 
                 android:layout_gravity="center"
 
-                android:text="Bloquear"
+                android:text="@string/door2"
                 android:textAlignment="center" />
         </LinearLayout>
     </LinearLayout>

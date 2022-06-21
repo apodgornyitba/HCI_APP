@@ -1,8 +1,356 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.speaker.SpeakerFragment">
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/device_speaker_title3"
+        style="@style/DeviceNameText"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Parlante"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+
+        android:layout_gravity="center"
+
+        android:layout_marginTop="68dp"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        app:icon="@drawable/ic_baseline_star_outline_24"
+        app:iconGravity="top"
+
+        app:iconSize="35dp"
+        app:iconTint="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/device_speaker_title3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/device_speaker_image3"
+        style="@style/DeviceImage"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:src="@drawable/speaker_bw"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/device_speaker_title3" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/device_speaker_switch3"
+
+        style="@style/DeviceTextBody"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        android:text="@string/switch4"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/device_speaker_image3" />
+
+    <LinearLayout
+        android:id="@+id/device_speaker_actions_layout"
+
+        android:layout_width="447dp"
+        android:layout_height="341dp"
+
+        android:layout_marginStart="35dp"
+
+
+        android:layout_marginEnd="35dp"
+
+        android:layout_weight="10"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/device_speaker_volume_layout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="44dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/device_speaker_switch3"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/device_speaker_slider_volume"
+
+                    android:layout_width="369dp"
+                    android:layout_height="wrap_content"
+
+                    android:stepSize="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:labelBehavior="floating"
+                    app:labelStyle="@style/DeviceSliderTooltip"
+                    app:tickVisible="false"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="292dp" />
+
+                <TextView
+                    android:id="@+id/device_speaker_slider_volume_indicator"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+
+                    android:text="27%"
+                    tools:layout_editor_absoluteX="293dp"
+                    tools:layout_editor_absoluteY="345dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_speaker_slider_volume_hint"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/speaker1"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="155dp"
+                tools:layout_editor_absoluteY="350dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/device_speaker_control_layout"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialButton"
+                    android:layout_width="60dp"
+
+                    android:layout_height="65dp"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_skip_previous_48"
+                    app:iconGravity="top"
+
+                    app:iconSize="48dp"
+                    app:iconTint="?android:textColorPrimary"
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="398dp" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialButton5"
+                    android:layout_width="68dp"
+
+                    android:layout_height="65dp"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_stop_48"
+                    app:iconGravity="top"
+
+                    app:iconSize="48dp"
+                    app:iconTint="?android:textColorPrimary"
+                    tools:layout_editor_absoluteX="93dp"
+                    tools:layout_editor_absoluteY="398dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialButton8"
+                    android:layout_width="64dp"
+
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_baseline_play_arrow_48"
+                    app:iconGravity="top"
+
+                    app:iconSize="48dp"
+                    app:iconTint="?colorPrimaryVariant"
+                    tools:layout_editor_absoluteX="247dp"
+                    tools:layout_editor_absoluteY="398dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialButton6"
+                    android:layout_width="64dp"
+
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_baseline_pause_48"
+                    app:iconGravity="top"
+
+                    app:iconSize="48dp"
+                    app:iconTint="?colorPrimaryVariant"
+                    tools:layout_editor_absoluteX="247dp"
+                    tools:layout_editor_absoluteY="398dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/materialButton7"
+                    android:layout_width="59dp"
+
+                    android:layout_height="66dp"
+                    android:background="@color/transparent"
+                    app:icon="@drawable/ic_outline_skip_next_48"
+                    app:iconGravity="top"
+
+                    app:iconSize="48dp"
+                    app:iconTint="?android:textColorPrimary"
+                    tools:layout_editor_absoluteX="310dp"
+                    tools:layout_editor_absoluteY="398dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/device_speaker_control_hint"
+
+                style="@style/DeviceTextSubtitle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/speaker2"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="172dp"
+                tools:layout_editor_absoluteY="515dp" />
+
+        </LinearLayout>
+
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/device_speaker_current_song_layout0"
+
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/device_speaker_current_song_layout"
+
+                android:layout_width="261dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/device_speaker_current_song"
+
+                    style="@style/DeviceTextBody"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="end"
+
+                    android:text="Aces High - Iron Maiden"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="88dp"
+                    tools:layout_editor_absoluteY="594dp" />
+
+                <TextView
+                    android:id="@+id/device_speaker_current_song_hint"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Reproduciendo actualmente"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="99dp"
+                    tools:layout_editor_absoluteY="630dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_speaker_playlist_layout"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
+
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/playlist_bw"
+
+
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/device_speaker_playlist_hint"
+
+                    style="@style/DeviceTextSubtitle"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/speaker3"
+                    android:textAlignment="center"
+                    tools:layout_editor_absoluteX="118dp"
+                    tools:layout_editor_absoluteY="796dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
