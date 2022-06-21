@@ -1,13 +1,21 @@
-package ar.edu.itba.hci_app.ui
+package ar.edu.itba.hci_app.ui.dashboard
+
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.itba.hci_app.R
+import ar.edu.itba.hci_app.model.Routine
+import ar.edu.itba.hci_app.ui.home.room.RoomAdapter
 
-class RoutinesAdapter constructor(private val dataSet: ArrayList<String>) :
-    RecyclerView.Adapter<RoutinesAdapter.ViewHolder>() {
+class RoutineAdapter constructor(
+    private val context: Context,
+    private val dataSet: ArrayList<Routine>
+) :
+    RecyclerView.Adapter<RoutineAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_routines, parent, false)
@@ -15,14 +23,15 @@ class RoutinesAdapter constructor(private val dataSet: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.buttonRoutines.text = dataSet[position]
+        Log.d(TAG, "Routine: ${dataSet[position].name}")
+        holder.buttonRoutines.text = dataSet[position].name
     }
 
     override fun getItemCount(): Int {
         return dataSet.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val buttonRoutines: Button
 
         init {

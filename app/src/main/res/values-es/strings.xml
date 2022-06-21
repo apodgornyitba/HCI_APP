@@ -45,14 +45,11 @@
     <string name="home_apierror_msg">
         No fue posible acceder a Mi Hogar\n\nVolvé a intentarlo más tarde
     </string>
-    <string name="home_no_data">
-        Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un cuarto para comenzar!
-    </string>
-    <string name="devices_no_data">
-        Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un dispositivo para comenzar!
-    </string>
+    <string name="home_no_data">Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un cuarto para comenzar!</string>
+    <string name="devices_no_data">Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un dispositivo para comenzar!</string>
 
     <!-- Devices -->
     <string name="Screen_Devices">Mis dispositivos</string>
+    <string name="routines_no_data">Está vacío, ¿ves? No hay monstruos aquí  ¡Agreguemos una rutina para comenzar!</string>
 
 </resources>
