@@ -1,87 +1,45 @@
 package ar.edu.itba.hci_app.notifications
 
+import android.app.PendingIntent
 import android.content.Context
-import androidx.work.CoroutineWorker
-import androidx.work.Data
+import android.content.Intent
+import android.util.Log
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.work.Worker
 import androidx.work.WorkerParameters
-import ar.edu.itba.hci_app.notifications.common.DataState
-import ar.edu.itba.hci_app.notifications.repository.NotificationRepository
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
-import com.google.gson.JsonObject
-import java.lang.Exception
+import ar.edu.itba.hci_app.R
+
+import ar.edu.itba.hci_app.ui.MainActivity
 
 
-class NotificationsWorker(appContext: Context,
-                          workerParams: WorkerParameters,
-                          private val notificationRepository: NotificationRepository,
-                          private val notificationsApp: NotificationsApp)
-    : CoroutineWorker(appContext, workerParams) {
-    override suspend fun doWork(): Result {
-//        val id = getDeviceId()
+private const val TAG = "NotificationsWorker"
 
-        val endPoint = inputData.getString(NotificationsApp.ENDPOINT_REQUEST)
-        val token = inputData.getString(NotificationsApp.TOKEN)
-        val deviceId = inputData.getString(NotificationsApp.DEVICE_ID)
+class NotificationsWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
+    override fun doWork(): Result {
+        return try {
+            val intent = Intent(this.applicationContext, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            val pendingIntent: PendingIntent =
+                PendingIntent.getActivity(this.applicationContext, 0, intent, 0)
 
-
-        if (endPoint != null && token != null && deviceId != null) {
-            getData(token, deviceId)
+            val builder =
+                NotificationCompat.Builder(this.applicationContext, "CHANNEL_ID")
+                    .setSmallIcon(R.drawable.bulb_smart_bw)
+                    .setContentTitle("My notification")
+                    .setContentText("Much longer text that cannot fit one line...")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(false)
+            with(NotificationManagerCompat.from(this.applicationContext)) {
+                notify(1, builder.build())
+            }
+            Result.success()
+        } catch (throwable : Throwable){
+            Log.e(TAG, "Error applying blur")
+            throwable.printStackTrace()
+            Result.failure()
         }
-
-        val outputData = Data.Builder()
-            .putString(NotificationsApp.NOTIFICATION_DATA, "Hi Da")
-            .build()
-
-        return Result.success(outputData)
-    }
-
-    private suspend fun getData(
-        token: String,
-        deviceId: String,
-    ) {
-        notificationRepository.getNotification(token, deviceId)
-            .catch {
-                println("OH DAMN IT, WE GOT ERROR: ${it.message}")
-            }
-            .collect { notificationRes ->
-                when (notificationRes) {
-                    is DataState.Success<*> -> {
-                        try {
-                            val response = notificationRes.data as JsonObject
-                            val id: String =
-                                if (response.has("id"))
-                                    response.get("id").toString().replace("\"", "")
-                                else
-                                    "1"
-
-                            val title: String =
-                                if (response.has("title"))
-                                    response.get("title").toString().replace("\"", "")
-                                else
-                                    "Hi"
-
-                            val content: String =
-                                if (response.has("content"))
-                                    response.get("content").toString().replace("\"", "")
-                                else
-                                    "Hi"
-
-                            val data = response.getAsJsonObject("data")
-
-                            notificationsApp.sendOnChannel(
-                                applicationContext,
-                                id,
-                                data,
-                                title,
-                                content,
-                            )
-                        } catch (e: Exception) {
-                            println("OH DAMN IT, WE GOT ERROR: ${e.message}")
-                        }
-                    }
-                    else ->  println("OH DAMN IT, WE GOT SERVER ERROR")
-                }
-            }
     }
 }

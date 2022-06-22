@@ -1,25 +1,37 @@
 package ar.edu.itba.hci_app.notifications
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
-import ar.edu.itba.hci_app.notifications.common.DataState
-import ar.edu.itba.hci_app.notifications.repository.NotificationRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.shareIn
-import javax.inject.Inject
+import androidx.lifecycle.ViewModelProvider
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import java.util.concurrent.TimeUnit
 
-@HiltViewModel
-class NotificationsViewModel @Inject constructor(
-    private val notificationRepository: NotificationRepository
-    ) : ViewModel() {
-    fun clickedOnNotification(
-        token: String,
-        id: String
-    ): Flow<DataState<Boolean>> = notificationRepository.clickedOnNotification(
-        authorization = token,
-        id = id
-    ).shareIn(CoroutineScope(Dispatchers.IO), SharingStarted.Eagerly, 1)
+class NotificationsViewModel(application: Application) : ViewModel() {
+    private val workManager = WorkManager.getInstance(application)
+
+    internal fun apply(){
+        val notificationWork = PeriodicWorkRequestBuilder<NotificationsWorker>(
+            15,
+            TimeUnit.MINUTES)
+            .addTag("notifications_worker")
+            .build()
+
+        workManager.enqueueUniquePeriodicWork("notifications_worker",
+            ExistingPeriodicWorkPolicy.KEEP,
+            notificationWork )
+
+    }
+
+    class NotificationsViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
+
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return if (modelClass.isAssignableFrom(NotificationsViewModel::class.java)) {
+                NotificationsViewModel(application) as T
+            } else {
+                throw IllegalArgumentException("Unknown ViewModel class")
+            }
+        }
+    }
 }
