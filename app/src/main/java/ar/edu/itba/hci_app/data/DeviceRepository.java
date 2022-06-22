@@ -41,7 +41,7 @@ public class DeviceRepository {
     }
 
     private Device mapDeviceLocalToModel(LocalDevice local) {
-        return new Device(local.id, local.name, local.favorite, local.image, local.room);
+        return new Device(local.id, local.name, local.favorite, local.image, local.room, local.status);
     }
 
     private LocalDevice mapDeviceRemoteToLocal(RemoteDevice remote) {
@@ -50,7 +50,9 @@ public class DeviceRepository {
                 remote.getName(),
                 remote.getMeta().getFavorite(),
                 remote.getMeta().getImage(),
-                remote.getMeta().getRoom());
+                remote.getMeta().getRoom(),
+                remote.getState().getStatus()
+        );
     }
 
     private Device mapDeviceRemoteToModel(RemoteDevice remote) {
@@ -59,7 +61,8 @@ public class DeviceRepository {
                 remote.getName(),
                 remote.getMeta().getFavorite(),
                 remote.getMeta().getImage(),
-                remote.getMeta().getRoom()
+                remote.getMeta().getRoom(),
+                remote.getState().getStatus()
         );
     }
 

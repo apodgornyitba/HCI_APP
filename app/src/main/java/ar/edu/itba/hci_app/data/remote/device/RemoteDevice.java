@@ -16,6 +16,9 @@ public class RemoteDevice {
     @SerializedName("meta")
     @Expose
     private RemoteDeviceMeta meta;
+    @SerializedName("state")
+    @Expose
+    private RemoteDeviceState state;
 
     public String getId() {
         return id;
@@ -39,5 +42,13 @@ public class RemoteDevice {
 
     public void setMeta(RemoteDeviceMeta meta) {
         this.meta = meta;
+    }
+
+    public RemoteDeviceState getState() {
+        return state;
+    }
+
+    public void setState(RemoteDeviceState state) {
+        this.state = state;
     }
 }
