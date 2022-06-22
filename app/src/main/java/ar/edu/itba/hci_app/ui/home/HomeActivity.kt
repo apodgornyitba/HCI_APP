@@ -20,7 +20,7 @@ import ar.edu.itba.hci_app.ui.HelpActivity
 import ar.edu.itba.hci_app.ui.SettingsActivity
 import ar.edu.itba.hci_app.ui.dashboard.DashboardFragment
 import ar.edu.itba.hci_app.ui.devices.DevicesFragment
-import ar.edu.itba.hci_app.ui.notifications.NotificationsFragment
+//import ar.edu.itba.hci_app.ui.notifications.NotificationsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.navigation_home,
                 R.id.navigation_dashboard,
                 R.id.navigation_devices,
-                R.id.navigation_notifications
+                //R.id.navigation_notifications
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -54,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.navigation_home -> HomeFragment()
                 R.id.navigation_dashboard -> DashboardFragment()
                 R.id.navigation_devices -> DevicesFragment()
-                R.id.navigation_notifications -> NotificationsFragment()
+                //R.id.navigation_notifications -> NotificationsFragment()
                 else -> HomeFragment()
             }
             replaceFragment(fragment, true)
