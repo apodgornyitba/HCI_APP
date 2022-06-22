@@ -52,15 +52,16 @@ public class Device {
     public String getTypeId() {
         return typeId;
     }
-    public void setTypeId(String typeId){
+
+    public void setTypeId(String typeId) {
         this.typeId = typeId;
     }
 
-    public Device(String name, Boolean favorite, String image, String room, String typeId) {
+    public Device(String name, String typeId, Boolean favorite, String image, String room) {
         this(null, name, typeId, favorite, image, room);
     }
 
-    public Device(String id, String name, String typeId,Boolean favorite, String image, String room) {
+    public Device(String id, String name, String typeId, Boolean favorite, String image, String room) {
         this.id = id;
         this.name = name;
         this.image = image;

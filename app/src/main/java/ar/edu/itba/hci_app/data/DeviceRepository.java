@@ -48,7 +48,7 @@ public class DeviceRepository {
         return new LocalDevice(
                 remote.getId(),
                 remote.getName(),
-                remote.getType().getTypeId(),
+                remote.getType().getId(),
                 remote.getMeta().getFavorite(),
                 remote.getMeta().getImage(),
                 remote.getMeta().getRoom()
@@ -60,7 +60,7 @@ public class DeviceRepository {
         return new Device(
                 remote.getId(),
                 remote.getName(),
-                remote.getType().getTypeId(),
+                remote.getType().getId(),
                 remote.getMeta().getFavorite(),
                 remote.getMeta().getImage(),
                 remote.getMeta().getRoom()
