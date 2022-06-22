@@ -92,9 +92,6 @@
 
     <string name="persiana1">Posición</string>
 
-
-    <string name="routines_no_data">Está vacío, ¿ves? No hay monstruos aquí  ¡Agreguemos una rutina para comenzar!</string>
-
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
