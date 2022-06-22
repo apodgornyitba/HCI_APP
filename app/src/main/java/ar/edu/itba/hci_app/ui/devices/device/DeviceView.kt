@@ -1,7 +1,10 @@
 package ar.edu.itba.hci_app.ui.devices.device
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.itba.hci_app.R
@@ -21,9 +24,13 @@ abstract class DeviceView : AppCompatActivity() {
 
             if (deviceName.isNotBlank()) {
                 Log.d(TAG, "Setting device name to: $deviceName")
-                val layoutDeviceTitle: TextView = findViewById(R.id.device_title)
+                try {
+                    val layoutDeviceTitle: TextView = findViewById(R.id.device_title)
 
-                layoutDeviceTitle.text = deviceName
+                    layoutDeviceTitle.text = deviceName
+                } catch (e: Exception) {
+                    // Has fragment
+                }
             }
         } catch (e: Exception) {
             Log.e(TAG, "onCreateView", e)
@@ -33,8 +40,13 @@ abstract class DeviceView : AppCompatActivity() {
 
     abstract fun inflateLayout()
 
-    fun getDeviceId() : String { return deviceId }
-    fun getDeviceName() : String { return deviceName }
+    fun getDeviceId(): String {
+        return deviceId
+    }
+
+    fun getDeviceName(): String {
+        return deviceName
+    }
 
     companion object {
         private var TAG = "DeviceView"

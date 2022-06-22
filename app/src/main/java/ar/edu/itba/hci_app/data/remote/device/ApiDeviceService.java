@@ -29,4 +29,16 @@ public interface ApiDeviceService {
 
     @DELETE("devices/{deviceId}")
     LiveData<ApiResponse<RemoteResult<Boolean>>> deleteDevice(@Path("deviceId") String deviceId);
+
+    @GET("devices/{deviceId}/state")
+    LiveData<ApiResponse<RemoteResult<RemoteDevice>>> getDeviceState(
+            @Path("deviceId") String deviceId
+    );
+
+    @PUT("devices/{deviceId}/{actionName}")
+    LiveData<ApiResponse<RemoteResult<Boolean>>> modifyDeviceState(
+            @Path("deviceId") String deviceId,
+            @Path("actionName") String actionName,
+            @Body RemoteDevice device
+    );
 }
