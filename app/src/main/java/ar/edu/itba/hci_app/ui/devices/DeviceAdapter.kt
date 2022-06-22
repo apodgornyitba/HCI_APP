@@ -43,38 +43,39 @@ class DeviceAdapter constructor(
 
         holder.buttonDevice.setOnClickListener {
             val context = holder.itemView.context
-            val intent: Intent
+            val intent: Intent?
 
             when (dataSet[position].typeId) {
                 "c89b94e8581855bc" -> {
                     Log.d(TAG, "I'm a speaker")
                     intent = Intent(context, Speaker::class.java)
-                    context.startActivity(intent)
                 }
                 "lsf78ly0eqrjbz91" -> {
                     Log.d(TAG, "I'm a door")
                     intent = Intent(context, Door::class.java)
-                    context.startActivity(intent)
                 }
                 "rnizejqr2di0okho" -> {
                     Log.d(TAG, "I'm a fridge")
                     intent = Intent(context, Fridge::class.java)
-                    context.startActivity(intent)
                 }
                 "im77xxyulpegfmv8" -> {
                     Log.d(TAG, "I'm a oven")
                     intent = Intent(context, Oven::class.java)
-                    context.startActivity(intent)
                 }
                 "eu0v2xgprrhhg41g" -> {
                     Log.d(TAG, "I'm a persiana")
                     intent = Intent(context, Persiana::class.java)
-                    context.startActivity(intent)
                 }
                 else -> {
                     Log.d(TAG, "I'm nothing :(")
+                    intent = null
                 }
+            }
 
+            if (intent != null) {
+                intent.putExtra("id", dataSet[position].id)
+                intent.putExtra("name", dataSet[position].name)
+                context.startActivity(intent)
             }
         }
 

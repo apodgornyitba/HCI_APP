@@ -1,12 +1,25 @@
 package ar.edu.itba.hci_app.ui.devices.device
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ar.edu.itba.hci_app.R
+import android.util.Log
+import ar.edu.itba.hci_app.databinding.ActivityDeviceFridgeBinding
 
-class Fridge : AppCompatActivity() {
+class Fridge : DeviceView() {
+    private lateinit var binding: ActivityDeviceFridgeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_device_fridge)
+        Log.d(TAG, "onCreate")
+    }
+
+    override fun inflateLayout() {
+        Log.d(TAG, "inflateLayout")
+
+        binding = ActivityDeviceFridgeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
+    companion object {
+        private var TAG = "Fridge"
     }
 }

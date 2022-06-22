@@ -1,12 +1,25 @@
 package ar.edu.itba.hci_app.ui.devices.device
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ar.edu.itba.hci_app.R
+import android.util.Log
+import ar.edu.itba.hci_app.databinding.ActivityDeviceOvenBinding
 
-class Oven : AppCompatActivity() {
+class Oven : DeviceView() {
+    private lateinit var binding: ActivityDeviceOvenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_device_oven)
+        Log.d(TAG, "onCreate")
+    }
+
+    override fun inflateLayout() {
+        Log.d(TAG, "inflateLayout")
+
+        binding = ActivityDeviceOvenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
+    companion object {
+        private var TAG = "Oven"
     }
 }
