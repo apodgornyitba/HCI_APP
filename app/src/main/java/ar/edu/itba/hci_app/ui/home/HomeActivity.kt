@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
@@ -43,7 +44,6 @@ class HomeActivity : AppCompatActivity() {
                     R.id.navigation_home,
                     R.id.navigation_dashboard,
                     R.id.navigation_devices,
-                    R.id.navigation_notifications
                 )
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
@@ -74,7 +74,35 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.appbar_menu, menu)
-        return true
+
+        val searchItem = menu?.findItem(R.id.action_search)
+        searchItem?.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(menuItem: MenuItem): Boolean {
+                // Do something when expanded
+                return true // Return true to expand action view
+            }
+
+            override fun onMenuItemActionCollapse(menuItem: MenuItem): Boolean {
+                // Do something when action item collapses
+                return true // Return true to collapse action view
+            }
+        })
+
+        val searchView = searchItem?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String): Boolean {
+                Log.d(TAG, "onQueryTextChange -> $newText")
+                return false
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                Log.d(TAG, "onQueryTextSubmit -> $query")
+                searchItem.collapseActionView()
+                return true
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -10,6 +10,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="menu_0">Search</string>
+
     <string name="menu_1">Settings</string>
     <string name="menu_2">Help</string>
     <string name="help">Help</string>
@@ -51,15 +53,18 @@
     <string name="switch3">On</string>
     <string name="switch4">Off</string>
 
+    <string name="door0">Door</string>
     <string name="door1">Unlock</string>
     <string name="door2">Lock</string>
 
+    <string name="fridge0">Fridge</string>
     <string name="fridge1">Temperature</string>
     <string name="fridge2">Temperature freezer</string>
     <string name="fridge3">Party</string>
     <string name="fridge4">Normal</string>
     <string name="fridge5">Holiday</string>
 
+    <string name="oven0">Oven</string>
     <string name="oven1">Temperature</string>
     <string name="oven2">Low</string>
     <string name="oven3">High</string>
@@ -71,9 +76,10 @@
     <string name="speaker2">Paused</string>
     <string name="speaker3">Playlist</string>
 
+    <string name="persiana0">Curtain</string>
     <string name="persiana1">Position</string>
 
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings">Settings</string>
     <string name="device_status_on">On</string>
     <string name="device_status_off">Off</string>
 
