@@ -7,7 +7,7 @@
     tools:context=".ui.devices.device.Persiana">
 
     <TextView
-        android:id="@+id/device_persiana_title"
+        android:id="@+id/device_title"
         style="@style/DeviceNameText"
         android:layout_marginTop="60dp"
 
@@ -68,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_persiana_title" />
+        app:layout_constraintTop_toBottomOf="@id/device_title" />
 
     <LinearLayout
         android:id="@+id/device_persiana_actions_layout"

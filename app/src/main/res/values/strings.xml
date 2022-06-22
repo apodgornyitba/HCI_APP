@@ -74,6 +74,19 @@
     <string name="persiana1">Position</string>
 
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="device_status_on">On</string>
+    <string name="device_status_off">Off</string>
+
+    <!-- Devices: Speaker -->
+    <string name="device_speaker_generic_title">Speaker</string>
+    <string name="device_speaker_volume">Volume</string>
+    <string name="device_speaker_previous">Previous</string>
+    <string name="device_speaker_next">Next</string>
+    <string name="device_speaker_pause">Paused</string>
+    <string name="device_speaker_play">Playing</string>
+    <string name="device_speaker_stop">Stopped</string>
+    <string name="device_speaker_playing_now">Playing now</string>
+    <string name="device_speaker_playlist">Playlist</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Language</string>

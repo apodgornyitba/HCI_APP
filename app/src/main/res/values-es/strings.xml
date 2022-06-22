@@ -46,15 +46,29 @@
         No fue posible acceder a Mi Hogar\n\nVolvé a intentarlo más tarde
     </string>
     <string name="home_no_data">Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un cuarto para comenzar!</string>
+    <string name="routines_no_data">Está vacío, ¿ves? No hay monstruos aquí  ¡Agreguemos una rutina para comenzar!</string>
     <string name="devices_no_data">Está vacío, ¿ves?\nNo hay monstruos aquí\n\n¡Agreguemos un dispositivo para comenzar!</string>
 
     <!-- Devices -->
     <string name="Screen_Devices">Mis dispositivos</string>
+    <string name="device_status_on">Encendido</string>
+    <string name="device_status_off">Apagado</string>
 
     <string name="switch1">Cerrado</string>
     <string name="switch2">Abierto</string>
     <string name="switch3">Encendido</string>
     <string name="switch4">Apagado</string>
+
+    <!-- Devices: Speaker -->
+    <string name="device_speaker_generic_title">Parlante</string>
+    <string name="device_speaker_volume">Volumen</string>
+    <string name="device_speaker_previous">Anterior</string>
+    <string name="device_speaker_next">Siguiente</string>
+    <string name="device_speaker_pause">Pausada</string>
+    <string name="device_speaker_play">Reproduciendo</string>
+    <string name="device_speaker_stop">Detenida</string>
+    <string name="device_speaker_playing_now">Reproduciendo actualmente</string>
+    <string name="device_speaker_playlist">Lista de reproducción</string>
 
     <string name="door1">Desbloquear</string>
     <string name="door2">Bloquear</string>

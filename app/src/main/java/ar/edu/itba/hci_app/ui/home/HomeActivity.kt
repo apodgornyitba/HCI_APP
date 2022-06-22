@@ -20,7 +20,7 @@ import ar.edu.itba.hci_app.ui.HelpActivity
 import ar.edu.itba.hci_app.ui.SettingsActivity
 import ar.edu.itba.hci_app.ui.dashboard.DashboardFragment
 import ar.edu.itba.hci_app.ui.devices.DevicesFragment
-//import ar.edu.itba.hci_app.ui.notifications.NotificationsFragment
+import ar.edu.itba.hci_app.ui.notifications.NotificationsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -30,36 +30,42 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        try {
 
-        val navView: BottomNavigationView = binding.navView
+            binding = ActivityHomeBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_home)
-        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home,
-                R.id.navigation_dashboard,
-                R.id.navigation_devices,
-                //R.id.navigation_notifications
+            val navView: BottomNavigationView = binding.navView
+
+            val navController = findNavController(R.id.nav_host_fragment_activity_home)
+            // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
+            val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.navigation_home,
+                    R.id.navigation_dashboard,
+                    R.id.navigation_devices,
+                    R.id.navigation_notifications
+                )
             )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-        navView.setOnItemSelectedListener { item ->
-            Log.d(TAG, "setOnItemSelectedListener. item: $item")
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            navView.setupWithNavController(navController)
+            navView.setOnItemSelectedListener { item ->
+                Log.d(TAG, "setOnItemSelectedListener. item: $item")
 
-            var fragment = when (item.itemId) {
-                R.id.navigation_home -> HomeFragment()
-                R.id.navigation_dashboard -> DashboardFragment()
-                R.id.navigation_devices -> DevicesFragment()
-                //R.id.navigation_notifications -> NotificationsFragment()
-                else -> HomeFragment()
+                var fragment = when (item.itemId) {
+                    R.id.navigation_home -> HomeFragment()
+                    R.id.navigation_dashboard -> DashboardFragment()
+                    R.id.navigation_devices -> DevicesFragment()
+                    R.id.navigation_notifications -> NotificationsFragment()
+                    else -> HomeFragment()
+                }
+                replaceFragment(fragment, true)
+
+                true
             }
-            replaceFragment(fragment, true)
-
-            true
+        } catch (e: Exception) {
+            Log.e(TAG, "onCreateView", e)
+            throw e
         }
     }
 

@@ -19,13 +19,16 @@ public class LocalDevice {
     public String image;
     @ColumnInfo(name = "room")
     public String room;
+    @ColumnInfo(name = "typeId")
+    public String typeId;
 
-    public LocalDevice(String id, String name, Boolean favorite, String image, String room) {
+    public LocalDevice(String id, String name, String typeId, Boolean favorite, String image, String room) {
         this.id = id;
         this.name = name;
         this.image = image;
         this.favorite = favorite;
         this.image = image;
         this.room = room;
+        this.typeId = typeId;
     }
 }

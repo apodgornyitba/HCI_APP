@@ -1,6 +1,7 @@
 package ar.edu.itba.hci_app.ui.devices
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.model.Device
+import ar.edu.itba.hci_app.ui.devices.device.*
 
 class DeviceAdapter constructor(
     private val context: Context,
@@ -32,18 +34,51 @@ class DeviceAdapter constructor(
 
         Log.d(TAG, "Device: ${dataSet[position].name}")
         Log.d(TAG, "Image: $imgName")
+        Log.d(TAG, "DeviceType: ${dataSet[position].typeId}")
+
 
         holder.buttonDevice.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
         holder.buttonDevice.text = dataSet[position].name
 
-/*
+
         holder.buttonDevice.setOnClickListener {
             val context = holder.itemView.context
-            val intent = Intent(context, Speaker::class.java)
+            val intent: Intent?
 
-            context.startActivity(intent)
+            when (dataSet[position].typeId) {
+                "c89b94e8581855bc" -> {
+                    Log.d(TAG, "I'm a speaker")
+                    intent = Intent(context, Speaker::class.java)
+                }
+                "lsf78ly0eqrjbz91" -> {
+                    Log.d(TAG, "I'm a door")
+                    intent = Intent(context, Door::class.java)
+                }
+                "rnizejqr2di0okho" -> {
+                    Log.d(TAG, "I'm a fridge")
+                    intent = Intent(context, Fridge::class.java)
+                }
+                "im77xxyulpegfmv8" -> {
+                    Log.d(TAG, "I'm a oven")
+                    intent = Intent(context, Oven::class.java)
+                }
+                "eu0v2xgprrhhg41g" -> {
+                    Log.d(TAG, "I'm a persiana")
+                    intent = Intent(context, Persiana::class.java)
+                }
+                else -> {
+                    Log.d(TAG, "I'm nothing :(")
+                    intent = null
+                }
+            }
+
+            if (intent != null) {
+                intent.putExtra("id", dataSet[position].id)
+                intent.putExtra("name", dataSet[position].name)
+                context.startActivity(intent)
+            }
         }
-*/
+
     }
 
     override fun getItemCount(): Int {
