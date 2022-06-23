@@ -11,24 +11,31 @@ import androidx.work.WorkerParameters
 import ar.edu.itba.hci_app.R
 
 import ar.edu.itba.hci_app.ui.MainActivity
+import ar.edu.itba.hci_app.ui.devices.device.Speaker
 
 
 private const val TAG = "NotificationsWorker"
 
 class NotificationsWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
     override fun doWork(): Result {
+
+        val deviceTypeId = inputData.getString("TypeId").toString()
+        val name = inputData.getString("Name").toString()
+        val status = inputData.getString("Status").toString()
+
         return try {
-            val intent = Intent(this.applicationContext, MainActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            }
+            val intent = getIntent(deviceTypeId)
             val pendingIntent: PendingIntent =
-                PendingIntent.getActivity(this.applicationContext, 0, intent, 0)
+                PendingIntent.getActivity(this.applicationContext,
+                    0,
+                    intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT)
 
             val builder =
                 NotificationCompat.Builder(this.applicationContext, "CHANNEL_ID")
                     .setSmallIcon(R.drawable.bulb_smart_bw)
-                    .setContentTitle("My notification")
-                    .setContentText("Much longer text that cannot fit one line...")
+                    .setContentTitle("$name notification")
+                    .setContentText(getContentText(name, deviceTypeId, status))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(false)
@@ -42,4 +49,108 @@ class NotificationsWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, 
             Result.failure()
         }
     }
+    /*TODO Cuando se haga merge se tiene que descomentar las lineas 59 a 75 para poder crear
+        las activitys de esos dispositivos*/
+    private fun getIntent(typeId:String) : Intent? {
+        val intent : Intent?
+        if(typeId == "c89b94e8581855bc"){
+            intent = Intent(this.applicationContext, Speaker::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+        }/*else if(typeId == "im77xxyulpegfmv8"){
+            intent = Intent(this.applicationContext, Oven::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+        }else if(typeId == "lsf78ly0eqrjbz91"){
+            intent = Intent(this.applicationContext, Door::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+        }else if(typeId == "eu0v2xgprrhhg41g"){
+            intent = Intent(this.applicationContext, Persiana::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+        }else if(typeId == "rnizejqr2di0okho"){
+            intent = Intent(this.applicationContext, Fridge::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+        }*/else {
+            intent = null
+        }
+        return intent
+    }
+
+    private fun getContentText(name:String, typeId:String, status:String) : String{
+        when(typeId){
+            "c89b94e8581855bc" -> {
+                return when (status) {
+                    "stopped" -> {
+                        "$name is stopped, play some music to start the fun"
+                    }
+                    "paused" -> {
+                        "$name is paused, resume and keep the party alive"
+                    }
+                    "playing" -> {
+                        "$name is playing your favorite songs"
+                    }
+                    else -> {
+                        Log.e(TAG, "Error creating ContentText for notifications in $typeId")
+                        "Something happened with $name"
+                    }
+                }
+            }
+            "im77xxyulpegfmv8"->{
+                return when (status) {
+                    "off" -> {
+                        "$name is off, start cooking and give some heat to his heart"
+                    }
+                    "on" -> {
+                        "$name is on, get ready o enjoy some food"
+                    }
+                    else -> {
+                        Log.e(TAG, "Error creating ContentText for notifications in $typeId")
+                        "Something happened with $name"
+                    }
+                }
+            }
+            "lsf78ly0eqrjbz91" -> {
+                return when (status) {
+                    "closed" -> {
+                        "$name is closed, did you remembered to activate the alarm?"
+                    }
+                    "open" -> {
+                        "$name is open, just a reminder, in case you forgot"
+                    }
+                    else -> {
+                        Log.e(TAG, "Error creating ContentText for notifications in $typeId")
+                        "Something happened with $name"
+                    }
+                }
+            }
+            "eu0v2xgprrhhg41g" -> {
+                return when (status) {
+                    "closed" -> {
+                        "$name is closed, open it up to let some light in"
+                    }
+                    "closing" -> {
+                        "$name is closing, are we going to take a nap?"
+                    }
+                    "opening" -> {
+                        "$name is opening, get ready to enjoy some fresh light "
+                    }
+                    "open" -> {
+                        "$name is open, enjoy that fresh light"
+                    }
+                    else -> {
+                        Log.e(TAG, "Error creating ContentText for notifications in $typeId")
+                        "Something happened with $name"
+                    }
+                }
+            }else -> {
+                Log.e(TAG, "Error creating ContentText for notifications")
+                return ""
+            }
+        }
+    }
+
+
 }

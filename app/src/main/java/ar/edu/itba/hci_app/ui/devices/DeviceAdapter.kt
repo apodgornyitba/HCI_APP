@@ -7,16 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.model.Device
+import ar.edu.itba.hci_app.notifications.NotificationsViewModel
 
 class DeviceAdapter constructor(
     private val context: Context,
     private val dataSet: ArrayList<Device>
 ) :
     RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_devices, parent, false)
@@ -33,6 +37,7 @@ class DeviceAdapter constructor(
 
         Log.d(TAG, "Device: ${dataSet[position].name}")
         Log.d(TAG, "Image: $imgName")
+        Log.d(TAG, "Status: ${dataSet[position].status}")
 
         holder.buttonDevice.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
         holder.buttonDevice.text = dataSet[position].name

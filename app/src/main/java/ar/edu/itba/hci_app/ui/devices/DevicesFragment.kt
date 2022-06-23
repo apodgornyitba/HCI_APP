@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -14,6 +15,7 @@ import ar.edu.itba.hci_app.data.DeviceRepository
 import ar.edu.itba.hci_app.data.Status
 import ar.edu.itba.hci_app.databinding.FragmentDevicesBinding
 import ar.edu.itba.hci_app.model.Device
+import ar.edu.itba.hci_app.notifications.NotificationsViewModel
 import ar.edu.itba.hci_app.ui.RepositoryViewModelFactory
 import ar.edu.itba.hci_app.ui.home.HomeActivity
 
@@ -48,6 +50,11 @@ class DevicesFragment : Fragment() {
             val viewModel: DeviceViewModel =
                 ViewModelProvider(this, viewModelFactory).get(DeviceViewModel::class.java)
 
+            val notificationsViewModel: NotificationsViewModel by viewModels {
+                NotificationsViewModel.NotificationsViewModelFactory(
+                    activity.application
+                )
+            }
 
             _binding = FragmentDevicesBinding.inflate(inflater, container, false)
 
@@ -78,6 +85,15 @@ class DevicesFragment : Fragment() {
                             binding.recyclerViewDevice?.visibility = View.GONE
                             binding.empty?.visibility = View.VISIBLE
                         }
+                        for (i in 0 until dataSet.size) {
+                            if (dataSet[i].status != null) {
+                                notificationsViewModel.apply(
+                                    dataSet[i].name,
+                                    dataSet[i].typeId,
+                                    dataSet[i].status
+                                )
+                            }
+                        }
                     }
                     else -> {
                         Log.d(TAG, "Resource status: ${resource.status}. Treated as ERROR.")
@@ -90,10 +106,16 @@ class DevicesFragment : Fragment() {
             binding.recyclerViewDevice?.layoutManager =
                 StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
             binding.recyclerViewDevice?.adapter = adapter
+
+//            Log.d(TAG, "dataSet Size 2: ${dataSet.size}")
+
+
+
         } catch (e: Exception) {
             Log.e(TAG, "onCreateView", e)
             throw e
         }
+
 
 
         return binding.root

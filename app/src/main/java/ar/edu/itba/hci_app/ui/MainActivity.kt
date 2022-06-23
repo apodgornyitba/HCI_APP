@@ -4,24 +4,12 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ar.edu.itba.hci_app.databinding.ActivityMainBinding
-import ar.edu.itba.hci_app.notifications.NotificationsViewModel
 import ar.edu.itba.hci_app.ui.home.HomeActivity
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-
-    private val notificationsViewModel: NotificationsViewModel by viewModels {
-        NotificationsViewModel.NotificationsViewModelFactory(
-            application
-        )
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         createNotificationChannel()
-        notificationsViewModel.apply()
 
         binding.button.setOnClickListener{
             startActivity()
@@ -51,9 +38,6 @@ class MainActivity : AppCompatActivity() {
         notificationManager.createNotificationChannel(channel)
     }
 
-    private fun getToken(): String {
-        return "**"
-    }
 
     private fun startActivity(){
         val intent = Intent(this, HomeActivity::class.java)
