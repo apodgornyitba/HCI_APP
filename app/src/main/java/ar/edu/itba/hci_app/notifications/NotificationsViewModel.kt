@@ -25,9 +25,8 @@ class NotificationsViewModel(application: Application) : ViewModel() {
         data.putString("Status", status)
         notificationWork.setInputData(data.build())
 
-        Log.d(TAG, "")
         workManager.enqueueUniquePeriodicWork("${name}_worker",
-            ExistingPeriodicWorkPolicy.REPLACE,
+            ExistingPeriodicWorkPolicy.KEEP,
             notificationWork.build() )
     }
 
