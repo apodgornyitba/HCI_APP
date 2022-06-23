@@ -101,15 +101,15 @@
     <string name="title_activity_settings">Ajustes</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Idiomas</string>
-    <string name="sync_header">Modo</string>
+    <string name="languages">Eliga Su Idioma</string>
+    <string name="mode">Eliga Su Modo De Visibilidad</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">English</string>
-    <string name="reply_title">Español</string>
+    <string name="language1">English</string>
+    <string name="language2">Español</string>
 
     <!-- Sync Preferences -->
-    <string name="attachment_title">OSCURO</string>
-    <string name="attachment_summary">CLARO</string>
+    <string name="mode1">OSCURO</string>
+    <string name="mode2">CLARO</string>
 
 </resources>

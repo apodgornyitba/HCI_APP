@@ -32,7 +32,7 @@
         app:iconTint="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/device_door_title"
+        app:layout_constraintStart_toEndOf="@+id/device_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
