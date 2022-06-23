@@ -36,9 +36,9 @@ public interface ApiDeviceService {
     );
 
     @PUT("devices/{deviceId}/{actionName}")
-    LiveData<ApiResponse<RemoteResult<Boolean>>> modifyDeviceState(
+    LiveData<ApiResponse<RemoteResult<Boolean>>> executeAction(
             @Path("deviceId") String deviceId,
             @Path("actionName") String actionName,
-            @Body RemoteDevice device
+            @Body String body
     );
 }
