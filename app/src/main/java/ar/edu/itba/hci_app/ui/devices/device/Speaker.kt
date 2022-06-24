@@ -2,8 +2,10 @@ package ar.edu.itba.hci_app.ui.devices.device
 
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.databinding.ActivityDeviceSpeakerBinding
+import ar.edu.itba.hci_app.ui.speaker.SpeakerFragment
 
 class Speaker : DeviceView() {
     private lateinit var binding: ActivityDeviceSpeakerBinding
@@ -12,20 +14,13 @@ class Speaker : DeviceView() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
 
-        // calling the action bar
-        val actionBar = getSupportActionBar()
+        var bundle: Bundle = Bundle()
 
-
-        // showing the back button in action bar
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setTitle(R.string.device_speaker_generic_title)
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return super.onSupportNavigateUp()
+        bundle.putString("name", "test")
+        var fragment: Fragment = SpeakerFragment()
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment).commit()
     }
 
     override fun inflateLayout() {

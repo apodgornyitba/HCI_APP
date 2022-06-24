@@ -9,12 +9,15 @@ import ar.edu.itba.hci_app.data.local.room.RoomDao;
 import ar.edu.itba.hci_app.data.local.room.LocalDevice;
 import ar.edu.itba.hci_app.data.local.room.DeviceDao;
 import ar.edu.itba.hci_app.data.local.room.RoutineDao;
+import ar.edu.itba.hci_app.data.local.room.speaker.LocalSpeaker;
+import ar.edu.itba.hci_app.data.local.room.speaker.SpeakerDao;
 
 @Database(
         entities = {
                 LocalRoom.class,
                 LocalDevice.class,
-                LocalRoutine.class
+                LocalRoutine.class,
+                LocalSpeaker.class
         },
         exportSchema = false, version = 1
 )
@@ -25,4 +28,6 @@ public abstract class MyDatabase extends RoomDatabase {
     abstract public DeviceDao deviceDao();
 
     abstract public RoutineDao routineDao();
+
+    abstract public SpeakerDao speakerDao();
 }

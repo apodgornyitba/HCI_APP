@@ -1,5 +1,6 @@
 package ar.edu.itba.hci_app.ui.devices
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
@@ -57,6 +58,16 @@ class DeviceViewModel constructor(repository: DeviceRepository) :
     fun deleteDevice(device: Device?): LiveData<Resource<Void>>? {
         return repository.deleteDevice(device)
     }
+
+    fun executeAction(
+        device: Device?,
+        actionName: String?,
+        body: String?
+    ): LiveData<Resource<Device?>?>? {
+        Log.d("ACCION", "EJECUTANDO ACCION DVM")
+        return repository.executeAction(device, actionName, body)
+    }
+
 
     fun executeAction(
         device: Device?,

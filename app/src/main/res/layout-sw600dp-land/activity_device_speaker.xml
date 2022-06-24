@@ -7,7 +7,7 @@
     tools:context=".ui.devices.device.Speaker">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView5"
+        android:id="@+id/fragmentContainerView"
         android:name="ar.edu.itba.hci_app.ui.speaker.SpeakerFragment"
         android:layout_width="1084dp"
         android:layout_height="876dp"
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toEndOf="@+id/fragmentContainerView5"
+        app:layout_constraintStart_toEndOf="@+id/fragmentContainerView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.503" />
 </androidx.constraintlayout.widget.ConstraintLayout>

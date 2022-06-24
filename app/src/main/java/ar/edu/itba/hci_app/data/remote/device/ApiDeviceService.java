@@ -35,4 +35,16 @@ public interface ApiDeviceService {
 
     @PUT("devices/{deviceId}/{actionName}")
     LiveData<ApiResponse<RemoteResult<Boolean>>> executeIntegerAction(@Path("deviceId") String deviceId, @Path("actionName") String actionName, @Body int[] params);
+
+    @GET("devices/{deviceId}/state")
+    LiveData<ApiResponse<RemoteResult<RemoteDevice>>> getDeviceState(
+            @Path("deviceId") String deviceId
+    );
+
+    @PUT("devices/{deviceId}/{actionName}")
+    LiveData<ApiResponse<RemoteResult<Boolean>>> executeAction(
+            @Path("deviceId") String deviceId,
+            @Path("actionName") String actionName,
+            @Body String body
+    );
 }
