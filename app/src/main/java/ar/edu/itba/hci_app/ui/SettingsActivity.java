@@ -37,7 +37,7 @@ public class SettingsActivity extends AppCompatActivity {
         manager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
 
         // referencing the text and button views
-        messageView = (TextView) findViewById(R.id.textView);
+        messageView = (TextView) findViewById(R.id.settings_text);
         messageT = (TextView) findViewById(R.id.textView3);
         btnEspanol = findViewById(R.id.btnEspanol);
         btnEnglish = findViewById(R.id.btnEnglish);

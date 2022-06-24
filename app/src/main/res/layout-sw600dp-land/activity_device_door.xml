@@ -62,7 +62,9 @@
 
         android:layout_marginTop="40dp"
 
-        android:text="@string/switch1"
+        android:textOff="@string/switch1"
+        android:textOn="@string/switch2"
+
         android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintLeft_toLeftOf="parent"

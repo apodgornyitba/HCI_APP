@@ -33,7 +33,7 @@
         app:iconTint="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/device_persiana_title"
+        app:layout_constraintStart_toEndOf="@+id/device_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -56,7 +56,8 @@
 
         android:layout_marginTop="8dp"
 
-        android:text="@string/switch1"
+        android:textOff="@string/switch1"
+        android:textOn="@string/switch2"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

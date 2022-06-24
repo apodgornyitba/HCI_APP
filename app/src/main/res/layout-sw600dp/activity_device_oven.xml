@@ -34,7 +34,7 @@
         app:iconTint="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/device_oven_title"
+        app:layout_constraintStart_toEndOf="@+id/device_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -59,7 +59,8 @@
 
         android:layout_marginTop="16dp"
 
-        android:text="@string/switch4"
+        android:textOff="@string/switch4"
+        android:textOn="@string/switch3"
         android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintLeft_toLeftOf="parent"
