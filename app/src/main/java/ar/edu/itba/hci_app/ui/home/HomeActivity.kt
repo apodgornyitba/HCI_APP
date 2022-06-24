@@ -75,33 +75,6 @@ class HomeActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.appbar_menu, menu)
 
-        val searchItem = menu?.findItem(R.id.action_search)
-        searchItem?.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
-            override fun onMenuItemActionExpand(menuItem: MenuItem): Boolean {
-                // Do something when expanded
-                return true // Return true to expand action view
-            }
-
-            override fun onMenuItemActionCollapse(menuItem: MenuItem): Boolean {
-                // Do something when action item collapses
-                return true // Return true to collapse action view
-            }
-        })
-
-        val searchView = searchItem?.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String): Boolean {
-                Log.d(TAG, "onQueryTextChange -> $newText")
-                return false
-            }
-
-            override fun onQueryTextSubmit(query: String): Boolean {
-                Log.d(TAG, "onQueryTextSubmit -> $query")
-                searchItem.collapseActionView()
-                return true
-            }
-        })
-
         return super.onCreateOptionsMenu(menu)
     }
 

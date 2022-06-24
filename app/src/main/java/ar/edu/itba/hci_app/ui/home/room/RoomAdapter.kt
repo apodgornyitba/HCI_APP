@@ -1,6 +1,7 @@
 package ar.edu.itba.hci_app.ui.home.room
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.model.Room
+import ar.edu.itba.hci_app.ui.devices.DeviceAdapter
+import ar.edu.itba.hci_app.ui.devices.device.*
 
 class RoomAdapter constructor(
     private val context: Context,
@@ -35,6 +38,16 @@ class RoomAdapter constructor(
 
         holder.buttonRoom.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
         holder.buttonRoom.text = dataSet[position].name
+
+        holder.buttonRoom.setOnClickListener {
+            val context = holder.itemView.context
+            val intent: Intent?
+
+            intent = Intent(context, RoomActivity::class.java)
+            intent.putExtra("id", dataSet[position].id)
+            intent.putExtra("name", dataSet[position].name)
+            context.startActivity(intent)
+        }
 
     }
 
