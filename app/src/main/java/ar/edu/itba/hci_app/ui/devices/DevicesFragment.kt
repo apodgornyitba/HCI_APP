@@ -89,8 +89,9 @@ class DevicesFragment : Fragment() {
                             if (dataSet[i].status != null) {
                                 notificationsViewModel.apply(
                                     dataSet[i].name,
+                                    dataSet[i].status,
                                     dataSet[i].typeId,
-                                    dataSet[i].status
+                                    i
                                 )
                             }
                         }
@@ -106,9 +107,6 @@ class DevicesFragment : Fragment() {
             binding.recyclerViewDevice?.layoutManager =
                 StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
             binding.recyclerViewDevice?.adapter = adapter
-
-//            Log.d(TAG, "dataSet Size 2: ${dataSet.size}")
-
 
 
         } catch (e: Exception) {

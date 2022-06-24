@@ -13,7 +13,7 @@ private const val TAG = "NotificationsViewModel"
 class NotificationsViewModel(application: Application) : ViewModel() {
     private val workManager = WorkManager.getInstance(application)
 
-    internal fun apply(name:String, status:String, deviceType: String){
+    internal fun apply(name:String, status:String, deviceType: String, index: Int){
 
         val notificationWork = PeriodicWorkRequest.Builder(NotificationsWorker::class.java,
             15,
@@ -23,6 +23,7 @@ class NotificationsViewModel(application: Application) : ViewModel() {
         data.putString("TypeId", deviceType)
         data.putString("Name", name)
         data.putString("Status", status)
+        data.putInt("index", index)
         notificationWork.setInputData(data.build())
 
         workManager.enqueueUniquePeriodicWork("${name}_worker",

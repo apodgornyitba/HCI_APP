@@ -14,7 +14,9 @@ import androidx.work.WorkerParameters
 import ar.edu.itba.hci_app.R
 
 import ar.edu.itba.hci_app.ui.MainActivity
+import ar.edu.itba.hci_app.ui.devices.DevicesFragment
 import ar.edu.itba.hci_app.ui.devices.device.Speaker
+import ar.edu.itba.hci_app.ui.home.HomeActivity
 
 
 private const val TAG = "NotificationsWorker"
@@ -23,18 +25,25 @@ class NotificationsWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, 
     override fun doWork(): Result {
 
         val deviceTypeId = inputData.getString("TypeId").toString()
+        Log.d(TAG, "TYPEID: $deviceTypeId")
         val name = inputData.getString("Name").toString()
+        Log.d(TAG, "NAME: $name")
         val status = inputData.getString("Status").toString()
-
+        Log.d(TAG, "status: $status")
+        val index = inputData.getInt("index", 0)
+        Log.d(TAG,"INDEX: $index")
         return try {
             val contentText = getContentText(name, deviceTypeId, status)
-            val intent = getIntent(deviceTypeId)
+            val intent = Intent(this.applicationContext, HomeActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+//            val intent = getIntent(deviceTypeId)
             val pendingIntent: PendingIntent =
                 PendingIntent.getActivity(
                     this.applicationContext,
                     0,
                     intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT
+                    PendingIntent.FLAG_IMMUTABLE
                 )
 
             createNotificationChannel()
@@ -48,7 +57,7 @@ class NotificationsWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, 
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)
             with(NotificationManagerCompat.from(this.applicationContext)) {
-                notify(NOTIFICATION_ID, builder.build())
+                notify(index, builder.build())
             }
             Result.success()
         } catch (throwable: Throwable) {
