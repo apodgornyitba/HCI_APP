@@ -7,6 +7,7 @@ public class Device {
     private Boolean favorite;
     private String image;
     private String room;
+    private String status;
     private String typeId;
 
     public String getId() {
@@ -57,11 +58,15 @@ public class Device {
         this.typeId = typeId;
     }
 
-    public Device(String name, String typeId, Boolean favorite, String image, String room) {
-        this(null, name, typeId, favorite, image, room);
+    public String getStatus(){return status;}
+
+    public void setStatus(String status){this.status = status;}
+
+    public Device(String name, String typeId, Boolean favorite, String image, String room, String status) {
+        this(null, name, typeId,favorite, image, room, status);
     }
 
-    public Device(String id, String name, String typeId, Boolean favorite, String image, String room) {
+    public Device(String id, String name, String typeId, Boolean favorite, String image, String room, String status) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -69,6 +74,7 @@ public class Device {
         this.image = image;
         this.room = room;
         this.typeId = typeId;
+        this.status = status;
     }
 
     @Override

@@ -19,6 +19,9 @@ public class RemoteDevice {
     @SerializedName("type")
     @Expose
     private RemoteDeviceType type;
+    @SerializedName("state")
+    @Expose
+    private RemoteDeviceState state;
 
     public String getId() {
         return id;
@@ -52,5 +55,11 @@ public class RemoteDevice {
         this.type = type;
     }
 
+    public RemoteDeviceState getState() {
+        return state;
+    }
 
+    public void setState(RemoteDeviceState state) {
+        this.state = state;
+    }
 }

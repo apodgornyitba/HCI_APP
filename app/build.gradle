@@ -41,6 +41,8 @@ dependencies {
     def ok_http_version = "4.9.1"
     def room_version = "2.4.2"
     def paging_version = "3.1.1"
+    def work_version = "2.7.1"
+
 
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "androidx.appcompat:appcompat:1.4.1"
@@ -57,6 +59,7 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$ok_http_version"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation "androidx.preference:preference:1.1.1"

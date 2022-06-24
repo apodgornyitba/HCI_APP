@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.itba.hci_app.R
 import ar.edu.itba.hci_app.model.Device
+import ar.edu.itba.hci_app.notifications.NotificationsViewModel
 import ar.edu.itba.hci_app.ui.devices.device.*
 
 class DeviceAdapter constructor(
@@ -35,7 +36,7 @@ class DeviceAdapter constructor(
         Log.d(TAG, "Device: ${dataSet[position].name}")
         Log.d(TAG, "Image: $imgName")
         Log.d(TAG, "DeviceType: ${dataSet[position].typeId}")
-
+        Log.d(TAG, "Status: ${dataSet[position].status}")
 
         holder.buttonDevice.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
         holder.buttonDevice.text = dataSet[position].name
