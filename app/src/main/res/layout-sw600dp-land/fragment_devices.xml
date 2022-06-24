@@ -8,7 +8,7 @@
     tools:context=".ui.devices.DevicesFragment">
 
     <TextView
-        android:id="@+id/fragment_devices_title"
+        android:id="@+id/devices_title"
 
         style="@style/ScreenTitle"
 
@@ -24,32 +24,24 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
-        android:layout_width="463dp"
-        android:layout_height="316dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
 
+        android:layout_marginStart="35dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fragment_devices_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2">
+        app:layout_constraintStart_toEndOf="@id/devices_title"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_devices_recycler_view"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_device"
 
-        android:layout_width="765dp"
-        android:layout_height="603dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <TextView

@@ -7,7 +7,7 @@
     tools:context=".ui.devices.device.Door">
 
     <TextView
-        android:id="@+id/device_door_title"
+        android:id="@+id/device_title"
         style="@style/DeviceNameText"
         android:layout_marginTop="60dp"
         android:text="Puerta"
@@ -32,7 +32,7 @@
         app:iconTint="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/device_door_title"
+        app:layout_constraintStart_toEndOf="@+id/device_title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -45,7 +45,7 @@
         android:src="@drawable/door_bw"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_door_title"
+        app:layout_constraintTop_toBottomOf="@id/device_title"
         app:tint="?android:tint" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -138,38 +138,34 @@
 
                 android:orientation="vertical">
 
-            <ImageButton
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_gravity="center"
+                <ImageButton
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
 
-                android:background="@drawable/roundcorner"
-                android:gravity="center"
-                android:padding="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/lock_closed_bw"
+                    android:background="@drawable/roundcorner"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/lock_closed_bw"
 
 
-                app:tint="@color/black" />
+                    app:tint="@color/black" />
 
-            <TextView
-                android:id="@+id/device_door_hint2"
+                <TextView
+                    android:id="@+id/device_door_hint2"
 
-                style="@style/DeviceTextSubtitle"
+                    style="@style/DeviceTextSubtitle"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:layout_gravity="center"
+                    android:layout_gravity="center"
 
-                android:text="@string/door2"
-                android:textSize="20sp"
-                android:textAlignment="center" />
+                    android:text="@string/door2"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-
-    >
-
 </androidx.constraintlayout.widget.ConstraintLayout>
