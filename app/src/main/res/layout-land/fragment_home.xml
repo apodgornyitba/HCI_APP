@@ -13,10 +13,11 @@
         android:layout_width="473dp"
         android:layout_height="305dp"
 
-        android:layout_marginEnd="35dp"
+        android:layout_marginTop="36dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="35dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toEndOf="@+id/home_name_text"
         app:layout_constraintTop_toTopOf="parent">
 
