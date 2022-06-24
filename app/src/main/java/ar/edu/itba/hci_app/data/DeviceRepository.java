@@ -295,4 +295,89 @@ public class DeviceRepository {
             }
         }.asLiveData();
     }
+
+    public LiveData<Resource<Device>> executeAction(Device device, String actionName, String[] body) {
+        Log.d(TAG, "DeviceRepository - executeAction()");
+        return new NetworkBoundResource<Device, LocalDevice, Boolean>(
+                executors,
+                this::mapDeviceLocalToModel,
+                remote -> {
+                    //aca la funcion de return adentro tiene type == null
+                    RemoteDevice remote2 = mapDeviceModelToRemote(device);
+                    return mapDeviceRemoteToLocal(remote2);
+                },
+                remote -> { return device; }) {
+
+            @Override
+            protected void saveCallResult(@NonNull LocalDevice local) {
+                database.deviceDao().update(local);
+            }
+
+            @Override
+            protected boolean shouldFetch(@Nullable LocalDevice local) {
+                return local != null;
+            }
+
+            @Override
+            protected boolean shouldPersist(@Nullable Boolean remote) {
+                return true;
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<LocalDevice> loadFromDb() {
+                return database.deviceDao().findById(device.getId());
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<ApiResponse<RemoteResult<Boolean>>> createCall() {
+                RemoteDevice remote = mapDeviceModelToRemote(device);
+                return service.executeAction(remote.getId(), actionName, body);
+            }
+        }.asLiveData();
+    }
+
+    public LiveData<Resource<Device>> executeIntegerAction(Device device, String actionName, int[] body) {
+        Log.d(TAG, "DeviceRepository - executeAction()");
+        return new NetworkBoundResource<Device, LocalDevice, Boolean>(
+                executors,
+                this::mapDeviceLocalToModel,
+                remote -> {
+                    //aca la funcion de return adentro tiene type == null
+                    RemoteDevice remote2 = mapDeviceModelToRemote(device);
+                    return mapDeviceRemoteToLocal(remote2);
+                },
+                remote -> { return device; }) {
+
+            @Override
+            protected void saveCallResult(@NonNull LocalDevice local) {
+                database.deviceDao().update(local);
+            }
+
+            @Override
+            protected boolean shouldFetch(@Nullable LocalDevice local) {
+                return local != null;
+            }
+
+            @Override
+            protected boolean shouldPersist(@Nullable Boolean remote) {
+                return true;
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<LocalDevice> loadFromDb() {
+                return database.deviceDao().findById(device.getId());
+            }
+
+            @NonNull
+            @Override
+            protected LiveData<ApiResponse<RemoteResult<Boolean>>> createCall() {
+                RemoteDevice remote = mapDeviceModelToRemote(device);
+                return service.executeIntegerAction(remote.getId(), actionName, body);
+            }
+        }.asLiveData();
+    }
+
 }

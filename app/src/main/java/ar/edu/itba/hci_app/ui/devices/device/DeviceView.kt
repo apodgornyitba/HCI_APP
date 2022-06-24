@@ -39,4 +39,42 @@ abstract class DeviceView : AppCompatActivity() {
     companion object {
         private var TAG = "DeviceView"
     }
+
+
+    /*
+    protected open fun executeAction(actionName: String?, reloadButtons: Boolean) {
+        executeActionWithParams(actionName, null, reloadButtons)
+    }
+
+    protected open fun executeActionWithParams(
+        actionName: String?,
+        params: List<String?>?,
+        reloadButtons: Boolean
+    ) {
+        val paramsAsStringArray: Array<String>
+        paramsAsStringArray = if (params == null) arrayOf() else Arrays.copyOf(
+            params.toTypedArray(), params.size,
+            Array<String>::class.java
+        )
+        viewModel.executeAction(device, actionName, paramsAsStringArray)
+            .observe(getViewLifecycleOwner(), this::handleActionResponse)
+        if (reloadButtons) reloadView()
+        stateable.reload()
+    }
+
+    protected open fun executeActionWithIntegerParams(
+        actionName: String?,
+        params: List<Int?>?,
+        reloadButtons: Boolean
+    ) {
+        val paramsAsIntArray: IntArray
+        paramsAsIntArray =
+            if (params == null) intArrayOf() else params.stream().mapToInt { i: Int? -> i!! }
+                .toArray()
+        viewModel.executeIntegerAction(device, actionName, paramsAsIntArray)
+            .observe(getViewLifecycleOwner(), this::handleActionResponse)
+        if (reloadButtons) reloadView()
+        stateable.reload()
+    }
+     */
 }

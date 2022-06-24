@@ -7,7 +7,7 @@
     tools:context=".ui.devices.DevicesFragment">
 
     <TextView
-        android:id="@+id/fragment_devices_title"
+        android:id="@+id/devices_title"
 
         style="@style/ScreenTitle"
 
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fragment_devices_title"
+        app:layout_constraintStart_toEndOf="@+id/devices_title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2">
 
@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fragment_devices_title"
+        app:layout_constraintStart_toEndOf="@+id/devices_title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

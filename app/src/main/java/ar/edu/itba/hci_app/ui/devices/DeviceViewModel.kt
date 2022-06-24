@@ -4,7 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import ar.edu.itba.hci_app.data.*
+import ar.edu.itba.hci_app.data.AbsentLiveData
+import ar.edu.itba.hci_app.data.DeviceRepository
+import ar.edu.itba.hci_app.data.Resource
+import ar.edu.itba.hci_app.data.Status
 import ar.edu.itba.hci_app.model.Device
 import ar.edu.itba.hci_app.ui.RepositoryViewModel
 
@@ -53,6 +56,22 @@ class DeviceViewModel constructor(repository: DeviceRepository) :
 
     fun deleteDevice(device: Device?): LiveData<Resource<Void>>? {
         return repository.deleteDevice(device)
+    }
+
+    fun executeAction(
+        device: Device?,
+        actionName: String?,
+        body: Array<String?>?
+    ): LiveData<Resource<Device?>?>? {
+        return repository.executeAction(device, actionName, body)
+    }
+
+    fun executeIntegerAction(
+        device: Device?,
+        actionName: String?,
+        body: IntArray?
+    ): LiveData<Resource<Device?>?>? {
+        return repository.executeIntegerAction(device, actionName, body)
     }
 
     fun setDeviceId(deviceId: String) {

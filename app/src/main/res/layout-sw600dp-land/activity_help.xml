@@ -28,8 +28,8 @@
 
     <TextView
         android:id="@+id/help1_text"
-        android:layout_width="807dp"
-        android:layout_height="262dp"
+        android:layout_width="814dp"
+        android:layout_height="377dp"
         android:layout_marginTop="176dp"
         android:text="@string/help1"
         android:textColor="?android:textColorPrimary"

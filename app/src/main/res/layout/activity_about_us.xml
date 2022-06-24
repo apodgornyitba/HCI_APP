@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/aboutus1_text"
-        android:layout_width="344dp"
-        android:layout_height="74dp"
+        android:layout_width="342dp"
+        android:layout_height="109dp"
         android:layout_marginTop="164dp"
         android:text="@string/aboutus1"
         android:textColor="?android:textColorPrimary"
