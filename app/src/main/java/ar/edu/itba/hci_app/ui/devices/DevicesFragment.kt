@@ -19,6 +19,8 @@ import ar.edu.itba.hci_app.notifications.NotificationsViewModel
 import ar.edu.itba.hci_app.ui.RepositoryViewModelFactory
 import ar.edu.itba.hci_app.ui.home.HomeActivity
 
+private const val TAG = "DevicesFragment"
+
 class DevicesFragment : Fragment() {
 
     private var _binding: FragmentDevicesBinding? = null
@@ -30,6 +32,13 @@ class DevicesFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var activity: HomeActivity
+    private lateinit var viewModel: DeviceViewModel
+
+    private val notificationsViewModel: NotificationsViewModel by viewModels {
+        NotificationsViewModel.NotificationsViewModelFactory(
+            activity.application
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,14 +56,9 @@ class DevicesFragment : Fragment() {
                     application.getDeviceRepository()
                 )
 
-            val viewModel: DeviceViewModel =
-                ViewModelProvider(this, viewModelFactory).get(DeviceViewModel::class.java)
+            viewModel = ViewModelProvider(this, viewModelFactory).get(DeviceViewModel::class.java)
 
-            val notificationsViewModel: NotificationsViewModel by viewModels {
-                NotificationsViewModel.NotificationsViewModelFactory(
-                    activity.application
-                )
-            }
+
 
             _binding = FragmentDevicesBinding.inflate(inflater, container, false)
 
@@ -78,12 +82,6 @@ class DevicesFragment : Fragment() {
 
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        Log.d(TAG, "onDestroyView")
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun refreshAction() {
@@ -112,43 +110,32 @@ class DevicesFragment : Fragment() {
                         dataSet.addAll(resource.data)
                         adapter.notifyDataSetChanged()
 
-                            binding.empty?.visibility = View.GONE
-                        } else {
-                            binding.recyclerViewDevice?.visibility = View.GONE
-                            binding.empty?.visibility = View.VISIBLE
-                        }
-                        for (i in 0 until dataSet.size) {
-                            if (dataSet[i].status != null) {
-                                notificationsViewModel.apply(
-                                    dataSet[i].name,
-                                    dataSet[i].status,
-                                    dataSet[i].typeId,
-                                    i
-                                )
-                            }
-                        }
+                        binding.empty?.visibility = View.GONE
+                    } else {
+                        binding.recyclerViewDevice?.visibility = View.GONE
+                        binding.empty?.visibility = View.VISIBLE
                     }
-                    else -> {
-                        Log.d(TAG, "Resource status: ${resource.status}. Treated as ERROR.")
-                        setErrorStatusWaitingForAPI()
+                    for (i in 0 until dataSet.size) {
+                        if (dataSet[i].status != null) {
+                            notificationsViewModel.apply(
+                                dataSet[i].name,
+                                dataSet[i].status,
+                                dataSet[i].typeId,
+                                i
+                            )
+                        }
                     }
                 }
+                else -> {
+                    Log.d(TAG, "Resource status: ${resource.status}. Treated as ERROR.")
+                    setErrorStatusWaitingForAPI()
+                }
             }
-
             binding.recyclerViewDevice?.setHasFixedSize(true)
             binding.recyclerViewDevice?.layoutManager =
                 StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
             binding.recyclerViewDevice?.adapter = adapter
-
-
-        } catch (e: Exception) {
-            Log.e(TAG, "onCreateView", e)
-            throw e
         }
-
-
-
-        return binding.root
     }
 
     override fun onDestroyView() {
@@ -173,9 +160,5 @@ class DevicesFragment : Fragment() {
         Log.d(TAG, "WaitingForAPI: Error")
         activity.setErrorStatusWaitingForAPI()
         binding.recyclerViewDevice?.visibility = View.INVISIBLE
-    }
-
-    companion object {
-        private const val TAG = "DevicesFragment"
     }
 }
