@@ -14,9 +14,9 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="28dp"
         android:text="Parlante"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
 
         android:layout_gravity="center"
 
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
         android:background="@color/transparent"
         app:icon="@drawable/ic_baseline_star_outline_24"
@@ -74,8 +74,8 @@
     <LinearLayout
         android:id="@+id/device_speaker_actions_layout"
 
-        android:layout_width="443dp"
-        android:layout_height="319dp"
+        android:layout_width="444dp"
+        android:layout_height="307dp"
 
         android:layout_marginStart="35dp"
 
@@ -87,10 +87,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintHorizontal_bias="0.986"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369">
+        app:layout_constraintVertical_bias="0.153">
 
         <LinearLayout
             android:id="@+id/device_speaker_volume_layout"

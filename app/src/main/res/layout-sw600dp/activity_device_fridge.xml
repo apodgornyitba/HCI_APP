@@ -46,8 +46,7 @@
         android:src="@drawable/refrigerator_bw"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/device_title"
-        app:tint="?android:tint" />
+        app:layout_constraintTop_toBottomOf="@id/device_title" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/device_fridge_switch"

@@ -73,7 +73,7 @@
         android:layout_height="284dp"
 
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="40dp"
 
 
         android:layout_weight="10"
@@ -147,8 +147,8 @@
         </LinearLayout>
 
         <Space
-            android:layout_width="464dp"
-            android:layout_height="12dp"
+            android:layout_width="443dp"
+            android:layout_height="13dp"
             android:layout_weight="4" />
 
         <LinearLayout

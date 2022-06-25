@@ -9,8 +9,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="ar.edu.itba.hci_app.ui.speaker.SpeakerFragment"
-        android:layout_width="1084dp"
-        android:layout_height="876dp"
+        android:layout_width="892dp"
+        android:layout_height="721dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -20,12 +20,12 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView6"
         android:name="ar.edu.itba.hci_app.ui.listRep.ListRepFragment"
-        android:layout_width="522dp"
-        android:layout_height="870dp"
+        android:layout_width="513dp"
+        android:layout_height="727dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toEndOf="@+id/fragmentContainerView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintVertical_bias="0.502" />
 </androidx.constraintlayout.widget.ConstraintLayout>
