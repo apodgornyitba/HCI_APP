@@ -15,6 +15,8 @@
         android:layout_marginTop="20dp"
 
         android:text="My Room"
+
+        android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,11 +24,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_devices_recycler_view"
 
-        android:layout_width="325dp"
-        android:layout_height="723dp"
+        android:layout_width="517dp"
+        android:layout_height="1112dp"
 
         android:layout_marginStart="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="35dp"
 
         app:layout_constraintEnd_toEndOf="parent"
